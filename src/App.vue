@@ -6,8 +6,8 @@
 
 <script setup>
 import { computed } from 'vue'
-import zh from 'element-plus/lib/locale/lang/zh-cn'
-import en from 'element-plus/lib/locale/lang/en'
+import zh from 'element-plus/dist/locale/zh-cn'
+import en from 'element-plus/dist/locale/en'
 import useAppStore from '@/store/modules/app'
 
 // import { useI18n } from 'vue-i18n'
