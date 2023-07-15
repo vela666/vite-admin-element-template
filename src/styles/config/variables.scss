@@ -1,0 +1,53 @@
+@mixin pageSection() {
+  background-color: $color-fff;
+  box-shadow: $box-shadow-base;
+  border-radius: $size-2;
+}
+
+@mixin text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin no-select() {
+  user-select: none;
+}
+
+
+// 颜色
+$color-fff: #fff !default;
+$color-black: #000 !default;
+$color-primary: #5473e8 !default; // 主色调
+$color-warning: #ff9f24 !default; // 警告
+$color-error: #f56c6c !default; // 错误
+$color-danger: #ff4d4f !default; // 错误
+$color-dedede: #dedede !default;
+$color-1f1f1f: #1f1f1f !default;
+$color-616161: #616161 !default;
+$color-8a8a8a: #8a8a8a !default;
+$color-304156: #304156 !default;
+$color-263445: #263445 !default;
+$color-1f2d3d: #1f2d3d !default;
+$color-001528: #001528 !default;
+$color-f4f4f5: #f4f4f5 !default;
+$color-8c9297: #8c9297 !default;
+$color-545c64: #545c64 !default;
+$color-bfcbd9: #bfcbd9 !default;
+
+$size-2: 2px !default;
+$size-4: 4px !default;
+$size-14: 14px !default;
+$size-20: 20px !default;
+$size-24: 24px !default;
+$size-36: 36px !default;
+$size-40: 40px !default;
+$size-56: 56px !default;
+$size-60: 60px !default;
+$size-64: 64px !default;
+$size-210: 210px !default;
+
+$layout-transition-time: 0.3s;
+
+// 阴影
+$box-shadow-base: 0px 0px 6px 0px rgba(28, 39, 80, 0.16) !default;

@@ -1,0 +1,692 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "id": 1,
+      "name": "Home",
+      "path": "/",
+      "component": "Layout",
+      "redirect": "/home",
+      "meta": {
+        "title": "主页",
+        "icon": "dashboard"
+      },
+      "hidden": false,
+      "children": [
+        {
+          "id": 2,
+          "name": "HomeIndex",
+          "path": "home",
+          "component": "/home/index",
+          "meta": {
+            "title": "首页",
+            "icon": null
+          },
+          "hidden": false
+        }
+      ],
+      "sort": 1
+    },
+    {
+      "id": 3,
+      "path": "/test",
+      "name": "Test",
+      "component": "Layout",
+      "redirect": "/test/test1",
+      "meta": {
+        "title": "测试",
+        "icon": "table"
+      },
+      "hidden": false,
+      "children": [
+        {
+          "id": 4,
+          "name": "Test1",
+          "path": "/test/test1",
+          "component": "/test/test1/index",
+          "meta": {
+            "title": "测试1",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [
+            {
+              "id": 1,
+              "name": "Test1-1",
+              "path": "/test/test1/test1-1",
+              "component": "/test/test1/test1-1/index",
+              "meta": {
+                "title": "测试1-1",
+                "icon": null
+              },
+              "hidden": false,
+              "children": [],
+              "sort": 1
+            },
+            {
+              "id": 1,
+              "name": "Test1-2",
+              "path": "/test/test1/test1-2",
+              "component": "/test/test1/test1-2/index",
+              "meta": {
+                "title": "测试1-2",
+                "icon": null
+              },
+              "hidden": false,
+              "children": [],
+              "sort": 2
+            }
+          ],
+          "sort": 1
+        },
+        {
+          "id": 7,
+          "name": "Test2",
+          "path": "/test/test2",
+          "component": "/test/test2/index",
+          "meta": {
+            "title": "测试2",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 2
+        }
+      ],
+      "sort": 2
+    }
+  ],
+  "data2": [
+    {
+      "id": 1,
+      "name": "Home",
+      "path": "/",
+      "component": "Layout",
+      "redirect": "/home",
+      "meta": {
+        "title": "主页",
+        "icon": "dashboard"
+      },
+      "hidden": false,
+      "children": [
+        {
+          "id": 2,
+          "name": "HomeIndex",
+          "path": "home",
+          "component": "/home/index",
+          "meta": {
+            "title": "首页",
+            "icon": null
+          },
+          "hidden": false,
+          "children": []
+        }
+      ],
+      "sort": 1
+    },
+    {
+      "id": 3,
+      "path": "/operation",
+      "component": "Layout",
+      "redirect": "/operation",
+      "meta": {
+        "title": "收入报表",
+        "icon": "table"
+      },
+      "hidden": false,
+      "children": [
+        {
+          "id": 4,
+          "name": "Operation",
+          "path": "operation",
+          "component": "/report/operation",
+          "meta": {
+            "title": "广告变现报表",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 1
+        },
+        {
+          "id": 7,
+          "name": "Aggregation",
+          "path": "aggregation",
+          "component": "/report/aggregation",
+          "meta": {
+            "title": "聚合报表",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 2
+        },
+        {
+          "id": 5,
+          "name": "History",
+          "path": "history",
+          "component": "/report/history",
+          "meta": {
+            "title": "历史报表",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 3
+        },
+        {
+          "id": 42,
+          "name": "AggregationSum",
+          "path": "aggregationSum",
+          "component": "/report/aggregationSum",
+          "meta": {
+            "title": "利润报表",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 4
+        },
+        {
+          "id": 6,
+          "name": "Finance",
+          "path": "finance",
+          "component": "/report/finance",
+          "meta": {
+            "title": "财务报表",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 5
+        },
+        {
+          "id": 41,
+          "name": "OperationStage",
+          "path": "operationStage",
+          "component": "/report/operationStage",
+          "meta": {
+            "title": "广告变现对比报表",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 6
+        },
+        {
+          "id": 44,
+          "name": "Time",
+          "path": "time",
+          "component": "/report/time",
+          "meta": {
+            "title": "收入抓取时效",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 7
+        },
+        {
+          "id": 50,
+          "name": "AggregationChart",
+          "path": "aggregationChart",
+          "component": "/report/aggregationChart",
+          "meta": {
+            "title": "聚合报表可视化",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 8
+        },
+        {
+          "id": 51,
+          "name": "PurchaseReport",
+          "path": "purchaseReport",
+          "component": "/report/purchaseReport",
+          "meta": {
+            "title": "内购收入报表",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 9
+        }
+      ],
+      "sort": 2
+    },
+    {
+      "id": 15,
+      "path": "/purchase",
+      "component": "Layout",
+      "redirect": "/purchase",
+      "meta": {
+        "title": "内购管理",
+        "icon": "money"
+      },
+      "hidden": false,
+      "children": [
+        {
+          "id": 16,
+          "name": "Purchase",
+          "path": "purchase",
+          "component": "/purchase/list",
+          "meta": {
+            "title": "内购订单",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 1
+        },
+        {
+          "id": 35,
+          "name": "Adjust",
+          "path": "adjust",
+          "component": "/purchase/adjust",
+          "meta": {
+            "title": "内购接入",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 2
+        },
+        {
+          "id": 17,
+          "name": "ExchangeRate",
+          "path": "exchangeRate",
+          "component": "/purchase/exchangeRate",
+          "meta": {
+            "title": "汇率转换",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 3
+        }
+      ],
+      "sort": 3
+    },
+    {
+      "id": 8,
+      "path": "/app",
+      "component": "Layout",
+      "redirect": "/app",
+      "meta": {
+        "title": "游戏应用",
+        "icon": "youxi"
+      },
+      "hidden": false,
+      "children": [
+        {
+          "id": 9,
+          "name": "App",
+          "path": "app",
+          "component": "/app/list",
+          "meta": {
+            "title": "应用管理",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 1
+        },
+        {
+          "id": 10,
+          "name": "Group",
+          "path": "group",
+          "component": "/app/group",
+          "meta": {
+            "title": "项目组管理",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 2
+        }
+      ],
+      "sort": 4
+    },
+    {
+      "id": 11,
+      "path": "/company",
+      "component": "Layout",
+      "redirect": "/company",
+      "meta": {
+        "title": "系统管理",
+        "icon": "user"
+      },
+      "hidden": false,
+      "children": [
+        {
+          "id": 13,
+          "name": "User",
+          "path": "user",
+          "component": "/system/user",
+          "meta": {
+            "title": "用户管理",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 2
+        },
+        {
+          "id": 14,
+          "name": "Role",
+          "path": "role",
+          "component": "/system/role",
+          "meta": {
+            "title": "角色管理",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 3
+        },
+        {
+          "id": 40,
+          "name": "Alarm",
+          "path": "alarm",
+          "component": "/system/alarm",
+          "meta": {
+            "title": "告警配置",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 5
+        }
+      ],
+      "sort": 5
+    },
+    {
+      "id": 18,
+      "path": "/admob",
+      "component": "Layout",
+      "redirect": "/admob",
+      "meta": {
+        "title": "广告平台",
+        "icon": "guanggao"
+      },
+      "hidden": false,
+      "children": [
+        {
+          "id": 19,
+          "name": "Admob",
+          "path": "admob",
+          "component": "/platform/admob",
+          "meta": {
+            "title": "Admob",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 1
+        },
+        {
+          "id": 45,
+          "name": "Tapjoy",
+          "path": "tapjoy",
+          "component": "/platform/tapjoy",
+          "meta": {
+            "title": "Tapjoy",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 1
+        },
+        {
+          "id": 49,
+          "name": "Kuaishou",
+          "path": "kuaishou",
+          "component": "/platform/kuaishou",
+          "meta": {
+            "title": "Kuaishou",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 1
+        },
+        {
+          "id": 52,
+          "name": "Sigmob",
+          "path": "sigmob",
+          "component": "/platform/sigmob",
+          "meta": {
+            "title": "Sigmob",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 1
+        },
+        {
+          "id": 53,
+          "name": "Yky",
+          "path": "yky",
+          "component": "/platform/yky",
+          "meta": {
+            "title": "Yky",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 1
+        },
+        {
+          "id": 20,
+          "name": "Facebook",
+          "path": "facebook",
+          "component": "/platform/facebook",
+          "meta": {
+            "title": "Facebook",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 2
+        },
+        {
+          "id": 46,
+          "name": "Tencent",
+          "path": "tencent",
+          "component": "/platform/tencent",
+          "meta": {
+            "title": "Tencent",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 2
+        },
+        {
+          "id": 21,
+          "name": "Unity",
+          "path": "unity",
+          "component": "/platform/unity",
+          "meta": {
+            "title": "Unity",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 3
+        },
+        {
+          "id": 47,
+          "name": "Mopub",
+          "path": "mopub",
+          "component": "/platform/mopub",
+          "meta": {
+            "title": "Mopub",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 3
+        },
+        {
+          "id": 48,
+          "name": "Fyber",
+          "path": "fyber",
+          "component": "/platform/fyber",
+          "meta": {
+            "title": "Fyber",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 4
+        },
+        {
+          "id": 22,
+          "name": "Vungle",
+          "path": "vungle",
+          "component": "/platform/vungle",
+          "meta": {
+            "title": "Vungle",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 4
+        },
+        {
+          "id": 23,
+          "name": "Ironsource",
+          "path": "ironsource",
+          "component": "/platform/ironsource",
+          "meta": {
+            "title": "Ironsource",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 5
+        },
+        {
+          "id": 24,
+          "name": "Mobvista",
+          "path": "mobvista",
+          "component": "/platform/mobvista",
+          "meta": {
+            "title": "Mobvista",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 6
+        },
+        {
+          "id": 26,
+          "name": "Applovin",
+          "path": "applovin",
+          "component": "/platform/applovin",
+          "meta": {
+            "title": "Applovin",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 7
+        },
+        {
+          "id": 27,
+          "name": "Toutiao",
+          "path": "toutiao",
+          "component": "/platform/toutiao",
+          "meta": {
+            "title": "Toutiao",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 8
+        },
+        {
+          "id": 28,
+          "name": "Adcolony",
+          "path": "adcolony",
+          "component": "/platform/adcolony",
+          "meta": {
+            "title": "Adcolony",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 9
+        },
+        {
+          "id": 31,
+          "name": "Inmobi",
+          "path": "inmobi",
+          "component": "/platform/inmobi",
+          "meta": {
+            "title": "Inmobi",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 10
+        },
+        {
+          "id": 32,
+          "name": "Chartboost",
+          "path": "chartboost",
+          "component": "/platform/chartboost",
+          "meta": {
+            "title": "Chartboost",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 11
+        },
+        {
+          "id": 33,
+          "name": "Sen",
+          "path": "sen",
+          "component": "/platform/sen",
+          "meta": {
+            "title": "Sen",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 12
+        },
+        {
+          "id": 34,
+          "name": "Smaato",
+          "path": "smaato",
+          "component": "/platform/smaato",
+          "meta": {
+            "title": "Smaato",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 13
+        },
+        {
+          "id": 43,
+          "name": "A4G",
+          "path": "a4g",
+          "component": "/platform/a4g",
+          "meta": {
+            "title": "A4G",
+            "icon": null
+          },
+          "hidden": false,
+          "children": [],
+          "sort": 14
+        }
+      ],
+      "sort": 6
+    }
+  ]
+}

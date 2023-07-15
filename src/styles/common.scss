@@ -1,0 +1,147 @@
+/*常用的一些样式class*/
+.h40 {
+  height: 40px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.w-320 {
+  width: 320px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mr-5{
+  margin-right: 5px;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+.mr-15 {
+  margin-right: 15px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+
+.p12 {
+  padding: 12px;
+}
+
+.p20 {
+  padding: 20px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ellipsis-col {
+  overflow: hidden;
+  text-align: justify;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis-col2 {
+  -webkit-line-clamp: 2;
+}
+
+.un-select {
+  user-select: none;
+}
+
+// 横向
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+// 纵向
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+
+// 两侧排列
+.flex-between {
+  justify-content: space-between;
+}
+
+// 水平居中
+.flex-level-center {
+  justify-content: center;
+}
+
+// 水平居中 垂直居中
+.flex-vertical-center {
+  align-items: center;
+}
+
+/*[data-popper-reference-hidden] {
+  visibility: hidden;
+  pointer-events: none;
+}*/
+
+.n-tooltip {
+  position: fixed;
+  border-radius: 2px;
+  padding: 10px;
+  max-width: 450px;
+  max-height: 285px;
+  z-index: 7777;
+  display: flex;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #282c34;
+  //box-shadow: 0px 3px 6px 0px rgba(28, 39, 80, 0.16);
+
+  .n-tooltip-overflow {
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    overscroll-behavior: none;
+    line-height: normal;
+  }
+}
+
+.n-tooltip-arrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  //z-index: -1;
+  pointer-events: none;
+  background-color: #282c34;
+}
+
+// 省略号
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

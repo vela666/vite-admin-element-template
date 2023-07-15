@@ -1,0 +1,20 @@
+//@charset "UTF-8";
+//@import './config/variables.scss';
+// 解决按需引入 后又手动导入 无样式  该方式使用时 import { ElMessage } from 'element-plus'
+@use 'element-plus/theme-chalk/src/message.scss';
+@use 'element-plus/theme-chalk/src/message-box.scss';
+
+// 让下面的scss文件可以使用变量
+@use "./config/config.scss" as * ;
+@use "./config/variables.scss" as * ;
+
+@import 'vxe-table/styles/variable.scss';
+@import 'vxe-table/styles/cssvar.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './sidebar.scss';
+@import './common.scss';
+// 对Element Ui 部分样式进行改写
+@import './element.scss';
+// 引入重置样式
+@import './reset.scss';

@@ -1,0 +1,3 @@
+// element-plus的命名空间防止后续命名空间改变，这里使用变量进行配置
+// 命名空间 使用 .#{$customNameSpace}-message{}
+$customNameSpace: 'ep' !default;
