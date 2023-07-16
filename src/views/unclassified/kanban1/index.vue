@@ -4,28 +4,24 @@
     <el-button @click="managementKanBan">管理仪表</el-button>
     <el-button @click="save">应用</el-button>
     <br />
-    <GridLayout dragHandle=".handler" ref="gridLayoutRef" v-model="items" />
+    <GridLayout
+      @layoutChange="layoutChange"
+      dragHandle="handler"
+      ref="gridLayoutRef"
+      v-model="items" />
 
     <LayoutManage :data="items" ref="layoutManageRef" @save="kanBanSave" />
   </main>
 </template>
 
 <script setup>
-import {
-  computed,
-  watch,
-  reactive,
-  ref,
-  nextTick,
-  onMounted,
-  shallowRef,
-  onActivated,
-} from 'vue'
+import { ref, onMounted, shallowRef, onActivated } from 'vue'
 import 'gridstack/dist/gridstack.min.css'
 import { GridStack } from 'gridstack'
 import GridLayout from './components/GridLayout.vue'
 import LayoutManage from './components/LayoutManage.vue'
-import { cloneDeep } from 'lodash-es'
+import { debounce } from 'lodash-es'
+import GridContent from './components/GridContent.vue'
 
 const smallScope = [0, 3]
 
@@ -87,47 +83,24 @@ const items = ref(
     {
       id: '2132',
       w: 6,
-      h: 2,
+      h: 1,
       x: 0,
       y: 0,
-      minH: 2,
+      data: [1, 2],
     },
     {
       id: '2134',
       w: 6,
       h: 2,
-      x: 0,
-      y: 2,
-      minH: 2,
-    },
-    {
-      id: '2135',
-      w: 6,
-      h: 4,
       x: 6,
       y: 0,
-      minH: 4,
-    },
-    {
-      id: '2136',
-      w: 6,
-      h: 2,
-      x: 0,
-      y: 4,
-      minH: 2,
-    },
-    {
-      id: '2137',
-      w: 6,
-      h: 4,
-      x: 6,
-      y: 4,
-      minH: 4,
+      data: [3, 4],
     },
   ].map((item) => {
     return {
       ...item,
       minH: item.h,
+      noMove: true,
     }
   }),
 )
@@ -210,6 +183,9 @@ const managementKanBan = () => {
   layoutManageRef.value.open(items.value)
 }
 
+const layoutChange = debounce((data) => {
+  // console.log(items.value, 'layoutChange')
+})
 const kanBanSave = (data) => {
   items.value = data
   gridLayoutRef.value.reloadLayout(data)

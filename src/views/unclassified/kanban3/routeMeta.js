@@ -1,5 +1,4 @@
 export default {
-  title: '看板',
+  title: '看板3',
   icon: 'kanban',
-  sort: 1,
 }

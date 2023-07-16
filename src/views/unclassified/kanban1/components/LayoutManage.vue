@@ -1,5 +1,6 @@
 <template>
   <DrawerTab v-model="drawerTabVisible" @close="close" ref="drawerTabRef">
+    <el-button @click="addGrid">添加</el-button>
     <el-button @click="save">应用</el-button>
     <el-button @click="close">重置</el-button>
     <div class="drag-content">
@@ -9,8 +10,10 @@
           cellHeight="30"
           boxCls="dashboard-container-drawer"
           noResize
+          :minRow="4"
           ref="gridLayoutRef"
           needExternalDragIn
+          :dragData="testRight"
           v-model="items" />
       </div>
       <div class="dashboard-drag-in">
@@ -25,7 +28,12 @@
           :gs-w="item.w"
           :gs-h="item.h"
           :key="item.id">
-          <div class="grid-stack-item-content">{{ item.title }}</div>
+          <div class="grid-stack-item-content flex-center flex-between">
+            <span class="mr-5">{{ item.id }}</span>
+            <el-icon style="font-size: 20px" @click="add(item)"
+              ><Plus
+            /></el-icon>
+          </div>
         </div>
       </div>
     </div>
@@ -56,16 +64,16 @@ let items = ref([])
 
 let rightData = ref([
   {
-    id: 101,
+    id: '101',
     w: 6,
     h: 4,
-    title: '测试1',
+    data: [5, 6],
   },
   {
-    id: 102,
+    id: '102',
     w: 6,
     h: 4,
-    title: '测试2',
+    data: [7, 8],
   },
 ])
 
@@ -78,16 +86,52 @@ const testRight = computed(() => {
 const gridDemoRef = ref(null)
 const gridLayoutRef = shallowRef(null)
 const open = (data) => {
-  items.value = cloneDeep(data)
+  items.value = cloneDeep(
+    data.map((item) => {
+      return {
+        ...item,
+        noMove: false,
+      }
+    }),
+  )
   drawerTabVisible.value = true
   nextTick(() => {
     gridLayoutRef.value.initLayout(true)
   })
 }
+
+const addGrid = (data) => {
+  const id = (+items.value.at(-1)?.id || 0) + 1
+  const node = {
+    x: 0, // 初始位置 x
+    y: 0, // 初始位置 y
+    // autoPosition: true,
+    // w: id % 2 ? 6 : 12,
+    w: 12,
+    // w: 6,
+    h: 1,
+    // h: 4,
+    id: id + '',
+    minH: 2,
+  }
+  items.value.push(node) // 将新网格项添加到数据数组中
+  gridLayoutRef.value.makeLayout(node)
+}
 const close = () => {}
 
 const save = () => {
-  emit('save', cloneDeep(items.value))
+  console.log(items.value)
+  emit(
+    'save',
+    cloneDeep(
+      items.value.map((item) => {
+        return {
+          ...item,
+          noMove: true,
+        }
+      }),
+    ),
+  )
   drawerTabVisible.value = false
 }
 
