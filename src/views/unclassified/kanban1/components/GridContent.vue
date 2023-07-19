@@ -1,20 +1,20 @@
 <template>
   <div
+    @mousedown="$emit('move')"
+    v-if="Object.keys($slots).includes('header')"
     style="cursor: move"
-    :class="handleClass"
-    @mousedown="$emit('move', true)">
-    拖我 {{ handleClass }}
+    :class="handleClass">
+    <slot name="header"></slot>
   </div>
-  <div>
-    <slot></slot>
+  <!--  <div>
     <button @click="handleRemove">X</button>
-    <p>{{ item }}</p>
-  </div>
+  </div>-->
+  <slot :remove="handleRemove" :data="item">
+    <div></div>
+  </slot>
 </template>
 
 <script setup>
-import { onActivated } from 'vue'
-
 const props = defineProps({
   item: {
     type: Object,
@@ -32,10 +32,6 @@ const handleRemove = () => {
 }
 defineOptions({
   name: 'GridContent',
-})
-
-onActivated(() => {
-  console.log('GridContent')
 })
 </script>
 

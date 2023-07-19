@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { h, render, computed, watch, nextTick } from 'vue'
+import { h, render, computed, watch, nextTick, useSlots } from 'vue'
 import GridContent from './GridContent.vue'
 import 'gridstack/dist/gridstack.min.css'
 import { GridStack } from 'gridstack'
@@ -24,6 +24,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  noDrag: {
+    type: Boolean,
+    default: false,
+  },
   cellHeight: {
     type: [Number, String],
     default: 110,
@@ -41,26 +45,57 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  needExternalDragIn: {
-    type: Boolean,
-    default: false,
-  },
   minRow: {
     type: Number,
     default: 0,
   },
-  // 外部拖拽的容器类名
+  // 外部拖拽的容器类名(选择器（例如'.sidebar .grid-stack-item')
   externalDragIn: {
     type: String,
-    default: '.dashboard-drag-in',
+    default: '',
+  },
+  // 指定拖动的类名 .handler
+  externalDragClass: {
+    type: String,
+    default: '.drag-handle',
   },
 })
 
 const emit = defineEmits(['update:modelValue', 'layoutChange'])
 
+const slots = useSlots()
+
 // 不要使用 ref(null) 作为代理 在比较结构时会破坏所有逻辑.
 // see https://github.com/gridstack/gridstack.js/issues/2115
 let myGridStack = null
+let requestIdleCallbackId = null
+const gridOptions = {
+  // animate: false,
+  // 不初始化现有项目
+  auto: false,
+  cellHeight: props.cellHeight + 'px',
+  disableResize: props.noResize,
+  disableDrag: props.noDrag,
+  // 只有该类名的元素才能拖动
+  // handleClass: props.dragHandle,
+  // handle: '.card-header',
+  margin: props.margin,
+  resizable: {
+    // 只允许从某个方向调整大小
+    // s 下,n 上,ne 右上,e 右边,se 右下,sw 左下,w 左边,nw 左上
+    handles: 's',
+  },
+  column: 12,
+  // 最小行数，防止网格在空时崩溃。
+  minRow: props.minRow,
+  styleInHead: true,
+  disableOneColumnMode: true,
+  // 接受从其他网格或外部拖动的元素
+  acceptWidgets(el) {
+    return true
+  },
+}
+
 const gridData = computed({
   get() {
     return props.modelValue
@@ -74,36 +109,8 @@ const layoutData = computed(() => {
   return [...gridData.value, ...props.dragData]
 })
 
-const gridOptions = {
-  // animate: false,
-  // 不初始化现有项目
-  auto: false,
-  cellHeight: props.cellHeight + 'px',
-  disableResize: props.noResize,
-  // 只有该类名的元素才能拖动
-  // handleClass: props.dragHandle,
-  margin: props.margin,
-  resizable: {
-    // 只允许从某个方向调整大小
-    // s 下,n 上,ne 右上,e 右边,se 右下,sw 左下,w 左边,nw 左上
-    handles: 's',
-  },
-  handle: '.card-header',
-
-  // disableDrag: true,
-  column: 12,
-  // 最小行数，防止网格在空时崩溃。
-  minRow: props.minRow,
-  styleInHead: true,
-  disableOneColumnMode: true,
-  // function example, but can also be: true | false | '.someClass' value
-  acceptWidgets: (el) => {
-    return true
-  },
-}
-
 // 重新布局
-const compactLayout = () => {
+const updLayout = () => {
   nextTick(() => {
     // 重新布局
     myGridStack.compact()
@@ -123,16 +130,17 @@ const findGridData = (id) => {
 const getSaveLayout = (saveContent = false, saveGridOpt = false) => {
   return myGridStack.getGridItems().map((item) => {
     const id = item.getAttribute('gs-id')
-    const noMove = item.getAttribute('gs-no-move')
     const w = +item.getAttribute('gs-w') || 6
     const h = +item.getAttribute('gs-h') || 1
+    const x = +item.getAttribute('gs-x')
+    const y = +item.getAttribute('gs-y')
     const node = {
       ...findGridData(id),
       id,
       w,
       h,
-      x: +item.getAttribute('gs-x'),
-      y: +item.getAttribute('gs-y'),
+      x,
+      y,
       minH: h,
     }
     return node
@@ -164,38 +172,47 @@ const getSaveLayout = (saveContent = false, saveGridOpt = false) => {
 const getMyGridStack = () => {
   return myGridStack
 }
+
 // 设置外部拖入
-const helper = (event) => {
-  const el = event.target.cloneNode(true)
-  return el
-}
 const setExternalDrag = () => {
-  nextTick(() => {
-    GridStack.setupDragIn(`${props.externalDragIn} .grid-stack-item`, {
-      appendTo: 'body',
-      helper,
-    })
-  })
+  if (!props.externalDragIn) return
+  requestIdleCallbackId && window.cancelIdleCallback(requestIdleCallbackId)
+  requestIdleCallbackId = window.requestIdleCallback(
+    () => {
+      GridStack.setupDragIn(props.externalDragIn, {
+        appendTo: 'body',
+        handle: props.externalDragClass,
+        /*helper(event) {
+          console.log(event)
+          const el = event.target.cloneNode(true)
+          return el
+        },*/
+      })
+    },
+    {
+      timeout: 300,
+    },
+  )
 }
 
 // 加载布局
 const reloadLayout = (data = gridData.value) => {
   nextTick(() => {
-    console.log(data, 'reloadLayout')
     myGridStack.load(data)
-    props.needExternalDragIn && setExternalDrag()
+    setExternalDrag()
   })
 }
 
-const updLayoutData = () => {
+const updLayoutData = debounce(() => {
   nextTick(() => {
-    props.needExternalDragIn && setExternalDrag()
+    setExternalDrag()
     // 更新位置
     gridData.value = getSaveLayout()
     emit('layoutChange')
   })
-}
-const initLayout = (bool = false) => {
+})
+
+const initLayout = () => {
   // https://github.com/gridstack/gridstack.js/tree/master/doc#resizableel-val
   // 不要使用 grid.value = GridStack.init()
   myGridStack?.destroy(false)
@@ -205,38 +222,56 @@ const initLayout = (bool = false) => {
     `#${props.boxCls}`,
   )
   //更改位置/大小
-  myGridStack.on('change', (event, items) => {
-    console.log('change')
-    updLayoutData()
-  })
+  myGridStack.on(
+    'change',
+    debounce((event, items) => {
+      console.log('change')
+      updLayoutData()
+    }),
+  )
   // 添加
   myGridStack.on('added', (event, items) => {
-    // console.log(items, 'added')
+    console.log(items, 'added')
     for (const item of items) {
       const itemEl = item.el
-      const itemElContent = itemEl.querySelector('.grid-stack-item-content')
+      // 不要改这个选择器
+      // const itemElContent = itemEl.querySelector('.grid-stack-item-content')
+      // 获取第一个 div
+      //  itemEl.querySelectorAll('div')[0]
+      const itemElContent = itemEl.querySelector('div')
       const itemId = item.id
       // Use Vue's render function to create the content
       // See https://vuejs.org/guide/extras/render-function.html#render-functions-jsx
-      //      Supports: emit, slots, props, attrs, see onRemove event below
-      const itemContentVNode = h(GridContent, {
-        item: findGridData(itemId),
-        handleClass: props.dragHandle,
-        onRemove(item) {
-          console.log(item, 'item')
-          myGridStack.removeWidget(itemEl)
+      // Supports: emit, slots, props, attrs, see onRemove event below
+      const itemContentVNode = h(
+        GridContent,
+        {
+          item: findGridData(itemId),
+          handleClass: props.dragHandle,
+          onRemove(item) {
+            console.log(item, 'item')
+            myGridStack.removeWidget(itemEl)
+          },
+          // 鼠标按下
+          onMove() {
+            // 支持外部拖入的时不需要执行
+            if (!props.externalDragIn) {
+              myGridStack.enableMove(true)
+            }
+          },
         },
-        // 鼠标按下
-        onMove() {
-          // 支持外部拖入的时不需要执行
-          !props.needExternalDragIn && myGridStack.movable(itemEl, true)
-        },
-      })
+        // 插槽
+        slots,
+      )
       // Render the vue node into the item element
       render(itemContentVNode, itemElContent)
     }
     updLayoutData()
   })
+  /*myGridStack.on('resizestop', (event, el) => {
+    console.log('resizestop')
+    updLayoutData()
+  })*/
   // 删除
   myGridStack.on('removed', (event, items) => {
     console.log('removed')
@@ -251,13 +286,17 @@ const initLayout = (bool = false) => {
   })
   // 拖动停止
   myGridStack.on('dragstop', (event, el) => {
+    console.log('dragstop')
     // 支持外部拖入的时不需要执行
-    !props.needExternalDragIn && myGridStack.movable(el, false)
+    if (!props.externalDragIn) {
+      myGridStack.enableMove(false)
+    }
   })
   // 外部拖拽进入
   myGridStack.on('dropped', (event, previousWidget, newWidget) => {
     // 如果 setupDragIn 用了helper 则需要执行该函数
-    myGridStack.removeWidget(newWidget.el)
+    // myGridStack.removeWidget(newWidget.el)
+    console.log(newWidget)
     makeLayout({
       x: newWidget.x,
       y: newWidget.y,
@@ -283,6 +322,7 @@ watch(
 )
 
 defineExpose({
+  updLayout,
   initLayout,
   makeLayout,
   reloadLayout,

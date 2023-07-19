@@ -8,7 +8,17 @@
       @layoutChange="layoutChange"
       dragHandle="handler"
       ref="gridLayoutRef"
-      v-model="items" />
+      noDrag
+      v-model="items">
+      <template #header> <div>拖我</div></template>
+      <template #default="{ remove, data }">
+        <div>
+          {{ data }}
+
+          <el-button @click="remove" text>删我</el-button>
+        </div>
+      </template>
+    </GridLayout>
 
     <LayoutManage :data="items" ref="layoutManageRef" @save="kanBanSave" />
   </main>
@@ -16,15 +26,12 @@
 
 <script setup>
 import { ref, onMounted, shallowRef, onActivated } from 'vue'
-import 'gridstack/dist/gridstack.min.css'
-import { GridStack } from 'gridstack'
 import GridLayout from './components/GridLayout.vue'
 import LayoutManage from './components/LayoutManage.vue'
-import { debounce } from 'lodash-es'
-import GridContent from './components/GridContent.vue'
 
 const smallScope = [0, 3]
 
+const isSave = shallowRef(false)
 const layoutManageRef = shallowRef(null)
 // const items = ref([])
 // 翻转的 查找最大的y值 数据 且 Y值相等 则取最后一个
@@ -81,26 +88,41 @@ const findMaxYAndSameYData = (arr) => {
 const items = ref(
   [
     {
-      id: '2132',
+      id: '1',
       w: 6,
-      h: 1,
+      h: 4,
       x: 0,
       y: 0,
-      data: [1, 2],
+      data: [1],
     },
     {
-      id: '2134',
-      w: 6,
+      id: '2',
+      w: 3,
       h: 2,
-      x: 6,
+      x: 9,
       y: 0,
-      data: [3, 4],
+      data: [2],
+    },
+    {
+      id: '3',
+      w: 6,
+      h: 4,
+      x: 6,
+      y: 2,
+      data: [3],
+    },
+    {
+      id: '4',
+      w: 12,
+      h: 2,
+      x: 0,
+      y: 4,
+      data: [4],
     },
   ].map((item) => {
     return {
       ...item,
       minH: item.h,
-      noMove: true,
     }
   }),
 )
@@ -183,11 +205,14 @@ const managementKanBan = () => {
   layoutManageRef.value.open(items.value)
 }
 
-const layoutChange = debounce((data) => {
-  // console.log(items.value, 'layoutChange')
-})
+const layoutChange = (data) => {
+  console.log('layoutChange', isSave.value)
+  isSave.value = false
+}
 const kanBanSave = (data) => {
+  console.log('kanBanSave')
   items.value = data
+  isSave.value = true
   gridLayoutRef.value.reloadLayout(data)
 }
 

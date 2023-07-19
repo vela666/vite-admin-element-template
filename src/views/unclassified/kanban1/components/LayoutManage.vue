@@ -11,26 +11,32 @@
           boxCls="dashboard-container-drawer"
           noResize
           :minRow="4"
+          externalDragIn=".dashboard-drag-in .dashboard-drag-in-item"
           ref="gridLayoutRef"
           needExternalDragIn
           :dragData="testRight"
-          v-model="items" />
+          v-model="items">
+          <template #default="{ data }">
+            <div>
+              {{ data }}
+            </div>
+          </template>
+        </GridLayout>
       </div>
       <div class="dashboard-drag-in">
         {{ testRight }}
         <!-- will size to match content -->
         <div
           v-for="item of testRight"
-          class="grid-stack-item"
+          class="dashboard-drag-in-item"
           :gs-id="item.id"
-          :gs-min-w="item.w"
-          :gs-min-h="item.h"
           :gs-w="item.w"
           :gs-h="item.h"
           :key="item.id">
-          <div class="grid-stack-item-content flex-center flex-between">
+          <div class="dashboard-drag-in-content flex-center flex-between">
+            <div class="drag-handle">拖我</div>
             <span class="mr-5">{{ item.id }}</span>
-            <el-icon style="font-size: 20px" @click="add(item)"
+            <el-icon style="font-size: 20px" @click="addCur(item)"
               ><Plus
             /></el-icon>
           </div>
@@ -41,15 +47,7 @@
 </template>
 
 <script setup>
-import {
-  computed,
-  watch,
-  reactive,
-  ref,
-  onMounted,
-  shallowRef,
-  nextTick,
-} from 'vue'
+import { computed, ref, shallowRef, nextTick } from 'vue'
 import { cloneDeep } from 'lodash-es'
 import GridLayout from './GridLayout.vue'
 const props = defineProps({
@@ -62,20 +60,33 @@ const emit = defineEmits(['save'])
 const drawerTabVisible = ref(false)
 let items = ref([])
 
-let rightData = ref([
-  {
-    id: '101',
-    w: 6,
-    h: 4,
-    data: [5, 6],
-  },
-  {
-    id: '102',
-    w: 6,
-    h: 4,
-    data: [7, 8],
-  },
-])
+let rightData = ref(
+  [
+    {
+      id: '101',
+      w: 6,
+      h: 4,
+      data: [5, 6],
+    },
+    {
+      id: '102',
+      w: 6,
+      h: 4,
+      data: [7, 8],
+    },
+    {
+      id: '103',
+      w: 6,
+      h: 4,
+      data: [33, 222],
+    },
+  ].map((item) => {
+    return {
+      ...item,
+      minH: item.h,
+    }
+  }),
+)
 
 const testRight = computed(() => {
   return rightData.value.filter(
@@ -83,24 +94,16 @@ const testRight = computed(() => {
   )
 })
 
-const gridDemoRef = ref(null)
 const gridLayoutRef = shallowRef(null)
 const open = (data) => {
-  items.value = cloneDeep(
-    data.map((item) => {
-      return {
-        ...item,
-        noMove: false,
-      }
-    }),
-  )
+  items.value = cloneDeep(data)
   drawerTabVisible.value = true
   nextTick(() => {
-    gridLayoutRef.value.initLayout(true)
+    gridLayoutRef.value.initLayout()
   })
 }
 
-const addGrid = (data) => {
+const addGrid = () => {
   const id = (+items.value.at(-1)?.id || 0) + 1
   const node = {
     x: 0, // 初始位置 x
@@ -117,21 +120,15 @@ const addGrid = (data) => {
   items.value.push(node) // 将新网格项添加到数据数组中
   gridLayoutRef.value.makeLayout(node)
 }
+const addCur = (data) => {
+  items.value.push(data) // 将新网格项添加到数据数组中
+  gridLayoutRef.value.makeLayout(data)
+}
 const close = () => {}
 
 const save = () => {
   console.log(items.value)
-  emit(
-    'save',
-    cloneDeep(
-      items.value.map((item) => {
-        return {
-          ...item,
-          noMove: true,
-        }
-      }),
-    ),
-  )
+  emit('save', cloneDeep(items.value))
   drawerTabVisible.value = false
 }
 
@@ -170,14 +167,14 @@ defineOptions({
     justify-content: space-between;
 
     &.ui-draggable-dragging {
-      > .grid-stack-item-content {
+      > .dashboard-drag-in-content {
         &:before {
           opacity: 0.5;
         }
       }
     }
   }
-  .grid-stack-item-content {
+  .dashboard-drag-in-content {
     display: flex;
     align-items: center;
     position: relative;
@@ -185,8 +182,10 @@ defineOptions({
     box-shadow: none;
     height: 42px;
     border-radius: 2px;
-    cursor: grab;
     z-index: 1;
+    .drag-handle {
+      cursor: grab;
+    }
     &:before {
       content: '';
       position: absolute;
