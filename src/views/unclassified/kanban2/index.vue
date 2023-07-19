@@ -37,6 +37,7 @@ const items = ref([
     x: 0,
     y: 0,
     mark: 'grid-item-1',
+    data: [1, 2, 3, 4],
   },
   {
     id: '2',
@@ -99,7 +100,6 @@ const addNewKanBan = () => {
     id: id + '',
     mark: `grid-item-${id}`,
   }
-  console.log(node)
   items.value.push(node) // 将新网格项添加到数据数组中
   gridLayoutRef.value.makeLayout(node.mark)
 }
@@ -110,12 +110,12 @@ const managementKanBan = () => {
 
 const kanBanSave = (data) => {
   // 查找 差集 其中一边不存在的数据
-  const differenceVals = differenceBy(data, items.value, 'id')
+  // const differenceVals = differenceBy(data, items.value, 'id')
   items.value = data
-  differenceVals.forEach((item) => {
+  /*differenceVals.forEach((item) => {
     gridLayoutRef.value.makeLayout(item.mark)
-  })
-  gridLayoutRef.value.reloadLayout()
+  })*/
+  gridLayoutRef.value.reloadLayout(data)
 }
 
 const save = () => {

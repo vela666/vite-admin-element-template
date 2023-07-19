@@ -16,7 +16,7 @@
           :dragData="testRight"
           v-model="items" />
       </div>
-      <div class="dashboard-drag-in">
+      <div class="dashboard-drag-in" ref="rightDragRef">
         {{ testRight }}
         <!-- will size to match content -->
         <div
@@ -50,7 +50,7 @@ import {
   shallowRef,
   nextTick,
 } from 'vue'
-import { cloneDeep } from 'lodash-es'
+import { cloneDeep, debounce } from 'lodash-es'
 import GridLayout from './GridLayout.vue'
 const props = defineProps({
   data: {
@@ -59,7 +59,10 @@ const props = defineProps({
   },
 })
 const emit = defineEmits(['save'])
+let observer = null
+
 const drawerTabVisible = ref(false)
+const rightDragRef = ref(null)
 let items = ref([])
 
 let rightData = ref([
@@ -86,17 +89,23 @@ const testRight = computed(() => {
 const gridDemoRef = ref(null)
 const gridLayoutRef = shallowRef(null)
 const open = (data) => {
-  items.value = cloneDeep(
-    data.map((item) => {
-      return {
-        ...item,
-        noMove: false,
-      }
-    }),
-  )
+  items.value = cloneDeep(data)
   drawerTabVisible.value = true
   nextTick(() => {
-    gridLayoutRef.value.initLayout(true)
+    gridLayoutRef.value.initLayout()
+    /* // 观察器的配置（需要观察什么变动）
+    const config = { attributes: true, childList: true, subtree: true }
+
+    // 当观察到变动时执行的回调函数
+    const callback = debounce((mutationsList, observer) => {
+      gridLayoutRef.value.setExternalDrag()
+    }, 300)
+
+    // 创建一个观察器实例并传入回调函数
+    observer = new MutationObserver(callback)
+
+    // 以上述配置开始观察目标节点
+    observer.observe(rightDragRef.value, config)*/
   })
 }
 
@@ -117,21 +126,13 @@ const addGrid = (data) => {
   items.value.push(node) // 将新网格项添加到数据数组中
   gridLayoutRef.value.makeLayout(node)
 }
-const close = () => {}
+const close = () => {
+  // observer.disconnect()
+}
 
 const save = () => {
   console.log(items.value)
-  emit(
-    'save',
-    cloneDeep(
-      items.value.map((item) => {
-        return {
-          ...item,
-          noMove: true,
-        }
-      }),
-    ),
-  )
+  emit('save', cloneDeep(items.value))
   drawerTabVisible.value = false
 }
 
