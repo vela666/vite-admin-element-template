@@ -3,6 +3,8 @@
 // 解决按需引入 后又手动导入 无样式  该方式使用时 import { ElMessage } from 'element-plus'
 @use 'element-plus/theme-chalk/src/message.scss';
 @use 'element-plus/theme-chalk/src/message-box.scss';
+// 全局引入时又改了 命名空间
+//@use "element-plus/theme-chalk/src/index.scss" as *;
 
 // 让下面的scss文件可以使用变量
 @use "./config/config.scss" as * ;
