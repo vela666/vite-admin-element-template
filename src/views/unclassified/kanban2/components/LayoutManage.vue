@@ -12,7 +12,7 @@
           noResize
           :minRow="4"
           ref="gridLayoutRef"
-          needExternalDragIn
+          externalDragIn=".dashboard-drag-in .dashboard-drag-in-item"
           :dragData="testRight"
           v-model="items" />
       </div>
@@ -21,14 +21,15 @@
         <!-- will size to match content -->
         <div
           v-for="item of testRight"
-          class="grid-stack-item"
+          class="dashboard-drag-in-item"
           :gs-id="item.id"
           :gs-min-w="item.w"
           :gs-min-h="item.h"
           :gs-w="item.w"
           :gs-h="item.h"
           :key="item.id">
-          <div class="grid-stack-item-content flex-center flex-between">
+          <div class="dashboard-drag-in-content flex-center flex-between">
+            <div class="drag-handle">拖我</div>
             <span class="mr-5">{{ item.id }}</span>
             <el-icon style="font-size: 20px" @click="add(item)"
               ><Plus
@@ -65,20 +66,29 @@ const drawerTabVisible = ref(false)
 const rightDragRef = ref(null)
 let items = ref([])
 
-let rightData = ref([
-  {
-    id: '101',
-    w: 6,
-    h: 4,
-    data: [5, 6],
-  },
-  {
-    id: '102',
-    w: 6,
-    h: 4,
-    data: [7, 8],
-  },
-])
+let rightData = ref(
+  [
+    {
+      id: '101',
+      w: 6,
+      h: 4,
+      data: [5],
+    },
+    {
+      id: '102',
+      w: 6,
+      h: 4,
+      data: [7],
+    },
+  ].map((item) => {
+    return {
+      ...item,
+      // noResize: false,
+      minH: item.minH ?? item.h,
+      mark: `grid-item-${item.id}`,
+    }
+  }),
+)
 
 const testRight = computed(() => {
   return rightData.value.filter(
@@ -93,19 +103,6 @@ const open = (data) => {
   drawerTabVisible.value = true
   nextTick(() => {
     gridLayoutRef.value.initLayout()
-    /* // 观察器的配置（需要观察什么变动）
-    const config = { attributes: true, childList: true, subtree: true }
-
-    // 当观察到变动时执行的回调函数
-    const callback = debounce((mutationsList, observer) => {
-      gridLayoutRef.value.setExternalDrag()
-    }, 300)
-
-    // 创建一个观察器实例并传入回调函数
-    observer = new MutationObserver(callback)
-
-    // 以上述配置开始观察目标节点
-    observer.observe(rightDragRef.value, config)*/
   })
 }
 
@@ -171,14 +168,14 @@ defineOptions({
     justify-content: space-between;
 
     &.ui-draggable-dragging {
-      > .grid-stack-item-content {
+      > .dashboard-drag-in-content {
         &:before {
           opacity: 0.5;
         }
       }
     }
   }
-  .grid-stack-item-content {
+  .dashboard-drag-in-content {
     display: flex;
     align-items: center;
     position: relative;
