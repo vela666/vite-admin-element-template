@@ -1,9 +1,10 @@
 <template>
   <main>
-    <el-button @click="addNewKanBan">添加仪表</el-button>
-    <el-button @click="managementKanBan">管理仪表</el-button>
-    <el-button @click="save">应用</el-button>
-    <br />
+    <div>
+      <el-button @click="addNewKanBan">添加仪表</el-button>
+      <el-button @click="managementKanBan">管理仪表</el-button>
+      <el-button @click="save">应用</el-button>
+    </div>
     <GridLayout
       @layoutChange="layoutChange"
       dragHandle="handler"
@@ -11,15 +12,25 @@
       noDrag
       v-model="items">
       <template #header> <div>拖我</div></template>
-      <template #default="{ remove, data }">
+      <template #default="{ cb, id }">
         <div>
-          {{ data }}
-
-          <el-button @click="remove" text>删我</el-button>
+          {{ items.find((v) => v.id === id) }}
+          <!--          <el-button @click="cb({ type: 'resize', val: false })">更新</el-button>-->
+          <el-button
+            @click="
+              cb({
+                type: 'update',
+                val: {
+                  noResize: !items.find((v) => v.id === id).noResize,
+                },
+              })
+            "
+            >启用或禁用调整大小</el-button
+          >
+          <el-button @click="cb({ type: 'remove' })">删我</el-button>
         </div>
       </template>
     </GridLayout>
-
     <LayoutManage :data="items" ref="layoutManageRef" @save="kanBanSave" />
   </main>
 </template>
@@ -28,6 +39,7 @@
 import { ref, onMounted, shallowRef, onActivated } from 'vue'
 import GridLayout from './components/GridLayout.vue'
 import LayoutManage from './components/LayoutManage.vue'
+import { debounce } from 'lodash-es'
 
 const smallScope = [0, 3]
 
@@ -90,7 +102,7 @@ const items = ref(
     {
       id: '1',
       w: 6,
-      h: 4,
+      // h: 4,
       x: 0,
       y: 0,
       data: [1],
@@ -98,7 +110,7 @@ const items = ref(
     {
       id: '2',
       w: 3,
-      h: 2,
+      // h: 2,
       x: 9,
       y: 0,
       data: [2],
@@ -106,7 +118,7 @@ const items = ref(
     {
       id: '3',
       w: 6,
-      h: 4,
+      // h: 4,
       x: 6,
       y: 2,
       data: [3],
@@ -114,7 +126,7 @@ const items = ref(
     {
       id: '4',
       w: 12,
-      h: 2,
+      // h: 2,
       x: 0,
       y: 4,
       data: [4],
@@ -122,7 +134,9 @@ const items = ref(
   ].map((item) => {
     return {
       ...item,
-      minH: item.h,
+      noResize: false,
+      minH: item.minH ?? 4,
+      // maxH: 8,
     }
   }),
 )
@@ -150,6 +164,13 @@ const items = ref(
 ),*/
 const gridLayoutRef = ref(null)
 
+const upd = (cb, data) => {
+  cb({
+    // ...data,
+    noResize: true,
+  })
+  // data.noResize = true
+}
 const addNewKanBan = () => {
   const id = (+items.value.at(-1)?.id || 0) + 1
   const node = {
@@ -205,14 +226,15 @@ const managementKanBan = () => {
   layoutManageRef.value.open(items.value)
 }
 
-const layoutChange = (data) => {
+const layoutChange = debounce((data) => {
   console.log('layoutChange', isSave.value)
   isSave.value = false
-}
+}, 300)
 const kanBanSave = (data) => {
   console.log('kanBanSave')
   items.value = data
   isSave.value = true
+  console.log(data)
   gridLayoutRef.value.reloadLayout(data)
 }
 

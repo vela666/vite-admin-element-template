@@ -1,17 +1,18 @@
 <template>
   <div
-    @mousedown="$emit('move')"
+    @mousedown="
+      handler({
+        type: 'move',
+        val: true,
+      })
+    "
     v-if="Object.keys($slots).includes('header')"
     style="cursor: move"
     :class="handleClass">
     <slot name="header"></slot>
   </div>
-  <!--  <div>
-    <button @click="handleRemove">X</button>
-  </div>-->
-  <slot :remove="handleRemove" :data="item">
-    <div></div>
-  </slot>
+  <!--  <el-button @click="handler({ type: 'remove' })">删我</el-button>-->
+  <slot :cb="handler" :id="item.id"></slot>
 </template>
 
 <script setup>
@@ -25,11 +26,12 @@ const props = defineProps({
     default: '',
   },
 })
-const emit = defineEmits(['remove', 'move'])
+const emit = defineEmits(['operateHandler'])
 
-const handleRemove = () => {
-  emit('remove', props.item)
+const handler = (args) => {
+  emit('operateHandler', args)
 }
+
 defineOptions({
   name: 'GridContent',
 })

@@ -16,9 +16,9 @@
           needExternalDragIn
           :dragData="testRight"
           v-model="items">
-          <template #default="{ data }">
+          <template #default="{ id }">
             <div>
-              {{ data }}
+              {{ layoutData.find((v) => v.id === id) }}
             </div>
           </template>
         </GridLayout>
@@ -83,11 +83,14 @@ let rightData = ref(
   ].map((item) => {
     return {
       ...item,
-      minH: item.h,
+      minH: item.minH ?? item.h,
     }
   }),
 )
 
+const layoutData = computed(() => {
+  return [...items.value, ...rightData.value]
+})
 const testRight = computed(() => {
   return rightData.value.filter(
     (right) => !items.value.map((v) => +v.id).includes(+right.id),
@@ -104,18 +107,17 @@ const open = (data) => {
 }
 
 const addGrid = () => {
-  const id = (+items.value.at(-1)?.id || 0) + 1
+  const id = self.crypto.randomUUID()
   const node = {
     x: 0, // 初始位置 x
     y: 0, // 初始位置 y
-    // autoPosition: true,
-    // w: id % 2 ? 6 : 12,
     w: 12,
-    // w: 6,
-    h: 1,
-    // h: 4,
+    // h: 1,
     id: id + '',
-    minH: 2,
+    // noResize: true,
+    data: [id],
+    minH: 1,
+    // maxH: 1,
   }
   items.value.push(node) // 将新网格项添加到数据数组中
   gridLayoutRef.value.makeLayout(node)
@@ -128,7 +130,16 @@ const close = () => {}
 
 const save = () => {
   console.log(items.value)
-  emit('save', cloneDeep(items.value))
+  emit(
+    'save',
+    cloneDeep(
+      items.value.map((item) => {
+        return {
+          ...item,
+        }
+      }),
+    ),
+  )
   drawerTabVisible.value = false
 }
 

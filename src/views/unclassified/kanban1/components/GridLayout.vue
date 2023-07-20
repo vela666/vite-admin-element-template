@@ -7,10 +7,10 @@ import { h, render, computed, watch, nextTick, useSlots } from 'vue'
 import GridContent from './GridContent.vue'
 import 'gridstack/dist/gridstack.min.css'
 import { GridStack } from 'gridstack'
-import { debounce, uniqBy } from 'lodash-es'
+import { debounce } from 'lodash-es'
 
 const props = defineProps({
-  // 已知问题 h设为1时 获取不到 h字段
+  // 已知问题 h设为1时 获取不到 h字段  h和w  minH和minW 必须有一对 一般minH和minW就行了
   // [{id: '1', w: 6, h: 4, x: 0, y: 10}]
   modelValue: {
     type: Array,
@@ -55,7 +55,7 @@ const props = defineProps({
     default: '',
   },
   // 指定拖动的类名 .handler
-  externalDragClass: {
+  externalDragHandle: {
     type: String,
     default: '.drag-handle',
   },
@@ -71,7 +71,9 @@ let myGridStack = null
 let requestIdleCallbackId = null
 const gridOptions = {
   // animate: false,
-  // 不初始化现有项目
+  // float: false,
+  // 不初始化项目
+  // cellHeightThrottle: 500,
   auto: false,
   cellHeight: props.cellHeight + 'px',
   disableResize: props.noResize,
@@ -128,7 +130,8 @@ const findGridData = (id) => {
 }
 
 const getSaveLayout = (saveContent = false, saveGridOpt = false) => {
-  return myGridStack.getGridItems().map((item) => {
+  return myGridStack.save(saveContent, saveGridOpt)
+  /*return myGridStack.getGridItems().map((item) => {
     const id = item.getAttribute('gs-id')
     const w = +item.getAttribute('gs-w') || 6
     const h = +item.getAttribute('gs-h') || 1
@@ -141,22 +144,10 @@ const getSaveLayout = (saveContent = false, saveGridOpt = false) => {
       h,
       x,
       y,
-      minH: h,
+      // minH: h,
     }
     return node
-  })
-  /* let arr = []
-  myGridStack.save(saveContent, saveGridOpt, (node) => {
-    arr.push({
-      w: node.w,
-      h: node.h,
-      id: node.id,
-      mark: node.el.id,
-      x: node.x,
-      y: node.y,
-    })
-  })
-  return arr*/
+  })*/
   /*return myGridStack.save(saveContent, saveGridOpt).map((item) => {
     return {
       w: item.minW,
@@ -181,12 +172,10 @@ const setExternalDrag = () => {
     () => {
       GridStack.setupDragIn(props.externalDragIn, {
         appendTo: 'body',
-        handle: props.externalDragClass,
-        /*helper(event) {
-          console.log(event)
-          const el = event.target.cloneNode(true)
-          return el
-        },*/
+        handle: props.externalDragHandle,
+        helper(event) {
+          return event.target.cloneNode(true)
+        },
       })
     },
     {
@@ -211,6 +200,31 @@ const updLayoutData = debounce(() => {
     emit('layoutChange')
   })
 })
+
+const operateHandler = (obj = {}) => {
+  const { el = '', type = '', val } = obj
+  switch (type) {
+    case 'remove':
+      myGridStack.removeWidget(el)
+      break
+    case 'update':
+      // val = {w: 12, h: 2, x: 0, y: 4, noResize: false } 任意一个字段 等
+      myGridStack.update(el, val)
+      updLayoutData()
+      break
+    case 'move':
+      // 支持外部拖入的时不需要执行
+      if (!props.externalDragIn) {
+        myGridStack.enableMove(val)
+      }
+      break
+    // 启用/禁用元素的大小
+    case 'resize':
+      myGridStack.resizable(el, val)
+      updLayoutData()
+      break
+  }
+}
 
 const initLayout = () => {
   // https://github.com/gridstack/gridstack.js/tree/master/doc#resizableel-val
@@ -248,16 +262,11 @@ const initLayout = () => {
         {
           item: findGridData(itemId),
           handleClass: props.dragHandle,
-          onRemove(item) {
-            console.log(item, 'item')
-            myGridStack.removeWidget(itemEl)
-          },
-          // 鼠标按下
-          onMove() {
-            // 支持外部拖入的时不需要执行
-            if (!props.externalDragIn) {
-              myGridStack.enableMove(true)
-            }
+          onOperateHandler(args) {
+            operateHandler({
+              el: itemEl,
+              ...args,
+            })
           },
         },
         // 插槽
@@ -268,50 +277,51 @@ const initLayout = () => {
     }
     updLayoutData()
   })
-  /*myGridStack.on('resizestop', (event, el) => {
-    console.log('resizestop')
-    updLayoutData()
-  })*/
+
   // 删除
   myGridStack.on('removed', (event, items) => {
     console.log('removed')
     for (const item of items) {
-      const itemEl = item.el
-      const itemElContent = itemEl.querySelector('.grid-stack-item-content')
-      updLayoutData()
+      // const itemElContent = item.el.querySelector('.grid-stack-item-content')
+      const itemElContent = item.el.querySelector('div')
       // Unmount the vue node from the item element
       // Calling render with null will allow vue to clean up the DOM, and trigger lifecycle hooks
       render(null, itemElContent)
     }
+    updLayoutData()
   })
   // 拖动停止
   myGridStack.on('dragstop', (event, el) => {
     console.log('dragstop')
-    // 支持外部拖入的时不需要执行
-    if (!props.externalDragIn) {
-      myGridStack.enableMove(false)
-    }
+    operateHandler({
+      type: 'move',
+      val: false,
+    })
   })
   // 外部拖拽进入
   myGridStack.on('dropped', (event, previousWidget, newWidget) => {
     // 如果 setupDragIn 用了helper 则需要执行该函数
     // myGridStack.removeWidget(newWidget.el)
-    console.log(newWidget)
+    console.log('dropped')
+    operateHandler({
+      el: newWidget.el,
+      type: 'remove',
+    })
     makeLayout({
+      ...findGridData(newWidget.id),
       x: newWidget.x,
       y: newWidget.y,
-      // autoPosition: true,
-      w: newWidget.w,
-      h: newWidget.h,
-      id: newWidget.id,
-      minH: newWidget.h,
+      // w: newWidget.w,
+      // h: newWidget.h,
+      // id: newWidget.id,
+      // minH: newWidget.h,
     })
   })
 
   reloadLayout()
 }
 
-watch(
+/*watch(
   gridData,
   debounce((val) => {
     console.log(val, 'gridData')
@@ -319,7 +329,7 @@ watch(
   {
     deep: true,
   },
-)
+)*/
 
 defineExpose({
   updLayout,
