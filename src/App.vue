@@ -1,5 +1,5 @@
 <template>
-  <ElConfigProvider :locale="locale" :size="appStore.size" namespace="ep">
+  <ElConfigProvider :locale="locale" :size="appStore.size" namespace="el">
     <router-view />
   </ElConfigProvider>
 </template>
