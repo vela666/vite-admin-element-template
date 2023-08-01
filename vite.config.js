@@ -61,7 +61,7 @@ export default defineConfig(({ command, mode }) => {
     },
     server: {
       // host : '0.0.0.0',
-      // port: VITE_PORT,
+      port: 9527,
       https: false,
       open: false,
       // hmr: true,
