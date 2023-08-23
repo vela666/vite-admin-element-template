@@ -76,8 +76,9 @@ function getParentPath2(parent, childrenPath, key = 'path') {
 /**
  * @description 映射动态路由(超过二级路由平铺为二级路由，解决keep-alive不缓存问题)
  * @param {Array} menus 后端接口返回的菜单列表
- * @param {Boolean} isOneLevel 路由嵌套级别 false 不平铺 true 平铺
- * @param {Boolean} needTiling 需不需平铺(渲染左侧或顶部菜单不平铺，动态添加路由平铺)
+ * @param {Boolean} notFirstLevel 路由嵌套超过一级
+ * @param {Boolean} needTiling  需不需平铺(false 不平铺 true 平铺 渲染左侧或顶部菜单不平铺，动态添加路由需要平铺)
+ * @param {Array} parentPath  记录父级path
  */
 // 如都不满足 自行修改映射逻辑
 
@@ -85,7 +86,7 @@ function getParentPath2(parent, childrenPath, key = 'path') {
 // let firstLoop = true
 export function generateRoute2(
   menus = [],
-  isOneLevel = false,
+  notFirstLevel = false,
   needTiling = true,
   parentPath = [],
 ) {
@@ -116,12 +117,12 @@ export function generateRoute2(
     if (item.children && item.children.length > 0) {
       // route.component =  Layout
       // 只有第一层应为Layout 防止 子级包含children 时 component 为 Layout
-      route.component = !isOneLevel
+      route.component = !notFirstLevel
         ? Layout
         : dynamicRoutesModules[`${defaultPath}${comp}.vue`]
       route.redirect = item.children[0].menu_path
       const parentMark = [...route.meta.hasParents, item.menu_path]
-      if (isOneLevel && needTiling) {
+      if (notFirstLevel && needTiling) {
         routes.push(
           ...generateRoute2(item.children, true, needTiling, parentMark),
         )
@@ -163,7 +164,7 @@ export function generateRoute2(
 // 适用于 路由格式 src/store/modules/data/menu3.json对应views3目录
 export function generateRoute3(
   menus = [],
-  isOneLevel = false,
+  notFirstLevel = false,
   needTiling = true,
   parentPath = [],
 ) {
@@ -194,13 +195,13 @@ export function generateRoute3(
     if (item.children && item.children.length > 0) {
       // route.component =  Layout
       // 只有第一层应为Layout 防止 子级包含children 时 component 为 Layout
-      route.component = !isOneLevel
+      route.component = !notFirstLevel
         ? Layout
         : dynamicRoutesModules[`${defaultPath}${comp}.vue`]
       route.redirect = item.redirect
       const parentMark = [...route.meta.hasParents, item.id]
 
-      if (isOneLevel && needTiling) {
+      if (notFirstLevel && needTiling) {
         routes.push(
           ...generateRoute3(item.children, true, needTiling, parentMark),
         )
@@ -253,7 +254,7 @@ export function generateRoute3(
 // 记录上N层父级标识和下N层子级标识
 export function generateRoute1(
   menus = [],
-  isOneLevel = false,
+  notFirstLevel = false,
   parentPath = [],
 ) {
   const routes = []
@@ -281,7 +282,7 @@ export function generateRoute1(
     if (item?.children?.length > 0) {
       route.redirect = item.redirect
       const paths = [...route.meta.hasParents, route.path]
-      if (isOneLevel) {
+      if (notFirstLevel) {
         routes.push(...generateRoute1(item.children, true, paths))
       } else {
         route.children = generateRoute1(item.children, true, paths)
@@ -298,7 +299,7 @@ export function generateRoute1(
 // 记录上一层父级标识 记录N层子级标识
 export function generatorDynamicRoutes3(
   menus = [],
-  isOneLevel = false,
+  notFirstLevel = false,
   parentPath = null,
 ) {
   const routes = []
@@ -323,7 +324,7 @@ export function generatorDynamicRoutes3(
     if (item?.children?.length > 0) {
       route.redirect = item.redirect
       const paths = route.path
-      if (isOneLevel) {
+      if (notFirstLevel) {
         routes.push(...generatorDynamicRoutes3(item.children, true, paths))
       } else {
         route.children = generatorDynamicRoutes3(item.children, true, paths)
@@ -339,7 +340,7 @@ export function generatorDynamicRoutes3(
 // 只记录上一层或下一层父级或子级标识  不管N层
 export function generatorDynamicRoutes4(
   menus = [],
-  isOneLevel = false,
+  notFirstLevel = false,
   parentPath = null,
 ) {
   const routes = []
@@ -364,7 +365,7 @@ export function generatorDynamicRoutes4(
     if (item?.children?.length > 0) {
       route.redirect = item.redirect
       const paths = route.path
-      if (isOneLevel) {
+      if (notFirstLevel) {
         routes.push(...generatorDynamicRoutes4(item.children, true, paths))
       } else {
         route.children = generatorDynamicRoutes4(item.children, true, paths)
@@ -380,7 +381,7 @@ export function generatorDynamicRoutes4(
 // 记录上N层父级标识  只记录下一层子级标识
 export function generatorDynamicRoutes5(
   menus = [],
-  isOneLevel = false,
+  notFirstLevel = false,
   parentPath = [],
 ) {
   const routes = []
@@ -405,7 +406,7 @@ export function generatorDynamicRoutes5(
     if (item?.children?.length > 0) {
       route.redirect = item.redirect
       const paths = [...route.meta.hasParents, route.path]
-      if (isOneLevel) {
+      if (notFirstLevel) {
         routes.push(...generatorDynamicRoutes5(item.children, true, paths))
       } else {
         route.children = generatorDynamicRoutes5(item.children, true, paths)
