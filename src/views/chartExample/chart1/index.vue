@@ -110,7 +110,7 @@ const loadColumnAndData = (colSize, rowSize) => {
         },
       })),
     )
-    xGrid.value.reloadData(tableData)
+    xGrid.value.reloadData(tableData.slice(0, 5))
     gridOptions.loading = false
   })
 }
