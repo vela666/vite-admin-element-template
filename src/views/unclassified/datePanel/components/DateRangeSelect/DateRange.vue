@@ -18,10 +18,10 @@
 
 <script setup>
 import { watch, ref, computed } from 'vue'
+import dayjs from 'dayjs'
 import DatePicker from 'vue-datepicker-next'
 import 'vue-datepicker-next/index.css'
 import 'vue-datepicker-next/locale/zh-cn'
-import dayjs from 'dayjs'
 const {
   Calendar,
   /*CalendarRange,
