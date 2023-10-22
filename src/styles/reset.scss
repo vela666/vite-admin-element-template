@@ -24,6 +24,9 @@ textarea {
   overflow: auto;
 }
 
+* {
+  box-sizing: border-box;
+}
 
 // 重置所有滚动条
 *, div {

@@ -1,69 +1,76 @@
 <template>
-  <CalendarRange
-    :disabledDate="disabledDate"
-    @calendarChange="change"
-    :multiple="false"
-    v-model:value="value" />
+  <div class="flex-column">
+    <div>
+      <DateRangeSelect :show-border="true" :needDynamic="true" v-model="value">
+        <EventComparison v-model="value.versus" />
+      </DateRangeSelect>
+
+      {{ value }}
+      <div>
+        <TableComparativeSelect
+          v-model="selectedStageTableIndex"
+          v-model:versus="value.versus" />
+      </div>
+    </div>
+    <div class="flex-column mt20">
+      <DateRangeSelect
+        isChecked
+        closeIcon
+        :needDynamic="false"
+        v-model="value1" />
+      {{ value1 }}
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { computed, watch, reactive, ref, onActivated } from 'vue'
-import DatePicker from 'vue-datepicker-next'
-import 'vue-datepicker-next/index.css'
-import 'vue-datepicker-next/locale/zh-cn'
-import dayjs from 'dayjs'
-const {
-  Calendar,
-  CalendarRange,
-  TimePanel,
-  TimeRange,
-  DateTime,
-  DateTimeRange,
-} = DatePicker
-
-// toDate() 获取原生的 Date
-const value = ref([dayjs('2023-07-18').toDate(), dayjs('2023-08-30').toDate()])
-watch(value, (v) => {
-  console.log(v)
+import { ref } from 'vue'
+import DateRangeSelect from './components/DateRangeSelect/index.vue'
+import EventComparison from './components/DateRangeSelect/EventComparison/index.vue'
+import TableComparativeSelect from './components/DateRangeSelect/EventComparison/TableComparativeSelect.vue'
+const value = ref({
+  timeZone: '8',
+  timeParticle: 'hour',
+  recentDay: '1-',
+  startTime: '2023-10-03 00:00:00',
+  endTime: '2023-10-21 23:59:59',
+  graphType: 1,
+  versus: [
+    {
+      date: ['2023-10-01', '2023-10-22'],
+      diff: '0-21',
+      mainName: '本月',
+      startTime: '2023-10-01 00:00:00',
+      endTime: '2023-10-22 23:59:59',
+      tableCurrentSelectionStage: true,
+      recentDay: '0-21',
+      shortcutType: 'currentMonth',
+    },
+    {
+      date: ['2023-09-01', '2023-09-30'],
+      diff: '22-51',
+      mainName: '上月',
+      startTime: '2023-09-01 00:00:00',
+      endTime: '2023-09-30 23:59:59',
+      tableCurrentSelectionStage: false,
+      recentDay: '22-51',
+      shortcutType: 'lastMonth',
+    },
+  ],
+  date: ['2023-10-03', '2023-10-21'],
+  diff: '1-',
+  mainName: '2023-10-03 ~ 昨日',
+  shortcutType: 'certainDayToYesterday',
 })
-const change = (val) => {
-  console.log(val)
-}
-const disabledDate = (value, innerValue) => {
-  // return value.getTime() > Date.now()
-  return false
-}
+const selectedStageTableIndex = ref(1)
+const value1 = ref({
+  date: [],
+  diff: '',
+})
+
 defineOptions({
-  name: 'DatePanel',
-})
-
-onActivated(() => {
-  console.log('DatePanel')
+  name: 'Test',
 })
 </script>
 
-<style lang="scss">
-.mx-date-row {
-  > .cell {
-    background-color: transparent !important;
-    padding: 4px 0 !important;
-    > div {
-      height: 32px;
-      line-height: 32px;
-    }
-    &.in-range {
-      > div {
-        background-color: #f2f6fc;
-      }
-    }
-
-    &.active {
-      padding: 4px 0 !important;
-      background-color: transparent;
-      > div {
-        background-color: #1284e7;
-      }
-    }
-  }
-}
-</style>
+<style lang="scss"></style>
