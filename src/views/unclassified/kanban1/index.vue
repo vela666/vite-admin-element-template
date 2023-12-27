@@ -1,6 +1,7 @@
 <template>
   <main>
     <div>
+      <el-button @click="addTop">添加至最前面</el-button>
       <el-button @click="addNewKanBan">添加仪表</el-button>
       <el-button @click="managementKanBan">管理仪表</el-button>
       <el-button @click="save">应用</el-button>
@@ -36,7 +37,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, shallowRef, onActivated } from 'vue'
+import { ref, onMounted, shallowRef, onActivated, nextTick } from 'vue'
 import GridLayout from './components/GridLayout.vue'
 import LayoutManage from './components/LayoutManage.vue'
 import { debounce } from 'lodash-es'
@@ -97,45 +98,44 @@ const findMaxYAndSameYData = (arr) => {
   }
 }
 
+const arr = [
+  {
+    h: 2,
+    w: 3,
+    id: '1',
+  },
+  {
+    h: 4,
+    w: 12,
+    id: '2',
+  },
+  {
+    h: 2,
+    w: 3,
+    id: '3',
+  },
+  {
+    h: 4,
+    w: 12,
+    id: '4',
+  },
+  {
+    h: 2,
+    w: 3,
+    id: '5',
+  },
+  {
+    h: 4,
+    w: 6,
+    id: '6',
+  },
+]
 const items = ref(
-  [
-    {
-      id: '1',
-      w: 6,
-      // h: 4,
-      x: 0,
-      y: 0,
-      data: [1],
-    },
-    {
-      id: '2',
-      w: 3,
-      // h: 2,
-      x: 9,
-      y: 0,
-      data: [2],
-    },
-    {
-      id: '3',
-      w: 6,
-      // h: 4,
-      x: 6,
-      y: 2,
-      data: [3],
-    },
-    {
-      id: '4',
-      w: 12,
-      // h: 2,
-      x: 0,
-      y: 4,
-      data: [4],
-    },
-  ].map((item) => {
+  arr.map((item) => {
     return {
       ...item,
       noResize: false,
-      minH: item.minH ?? 4,
+      minH: item.h ?? 4,
       // maxH: 8,
     }
   }),
@@ -171,6 +171,57 @@ const upd = (cb, data) => {
   })
   // data.noResize = true
 }
+
+const addTop = () => {
+  const node = {
+    x: 0, // 初始位置 x
+    y: 0, // 初始位置 y
+    // autoPosition: true,
+    // w: id % 2 ? 6 : 12,
+    w: 12,
+    // w: 6,
+    h: 4,
+    // h: 4,
+    id: Math.random() + '',
+    minH: 4,
+  }
+  /* const { maxY, maxYSameData } = findMaxYAndSameYData(cloneDeep(items.value))
+
+  const wTotal = cloneDeep(maxYSameData).reduce((prev, curr) => {
+    return 12 - (prev += curr.w)
+  }, 0)
+
+  const isW3 = maxYSameData.every((item) => item.w === 3)
+  const isSmallFill = maxYSameData.every((item) => smallScope.includes(item.x))
+  console.log(wTotal, maxYSameData)
+  const lastVal = maxYSameData.slice(-1)[0]
+  if (wTotal >= 6) {
+    if (isW3) {
+      if (isSmallFill) {
+        node.x = 12 - wTotal
+        node.y = lastVal.y
+      } else {
+        node.x = 0
+        node.y = lastVal.h + lastVal.y
+      }
+    }
+  } else {
+    node.x = 0
+    node.y = lastVal.y
+    // 检查指定区域是否为空。
+    const bool = gridLayoutRef.value
+      .getMyGridStack()
+      .isAreaEmpty(node.x, node.y, node.w, node.h)
+    if (!bool) {
+      node.x = 0
+      node.y = lastVal.h + lastVal.y
+    }
+  }
+  console.log(node)*/
+  items.value.push(node) // 将新网格项添加到数据数组中
+  gridLayoutRef.value.makeLayout(node)
+}
+
 const addNewKanBan = () => {
   const id = (+items.value.at(-1)?.id || 0) + 1
   const node = {
@@ -230,6 +281,7 @@ const layoutChange = debounce((data) => {
   console.log('layoutChange', isSave.value)
   isSave.value = false
 }, 300)
+
 const kanBanSave = (data) => {
   console.log('kanBanSave')
   items.value = data
@@ -238,7 +290,11 @@ const kanBanSave = (data) => {
   gridLayoutRef.value.reloadLayout(data)
 }
 
-const save = () => {}
+const save = () => {
+  nextTick(() => {
+    console.log(gridLayoutRef.value.getSaveLayout())
+  })
+}
 
 onMounted(() => {
   gridLayoutRef.value.initLayout()
