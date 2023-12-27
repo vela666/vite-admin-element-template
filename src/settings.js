@@ -1,6 +1,6 @@
 // import logo from '@/assets/imgs/logo2.png'
 export default {
-  title: '可可乐乐。',
+  title: '小火车污污污。',
   showSettings: false,
   tagsView: true,
   fixedHeader: true,

@@ -20,3 +20,45 @@
 @import './element.scss';
 // 引入重置样式
 @import './reset.scss';
+
+// div模拟输入框
+/*
+<div class="w180 mr10 nd-fake-input nd-not-allowed" v-showTips>
+测试
+</div>
+*/
+.nd-fake-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 10px;
+  border: 1px solid #cbd0d6;
+  border-radius: 4px;
+  height: 32px;
+  line-height: 32px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #545E6E;
+
+  .el-icon-arrow-down {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+  }
+
+  &:hover {
+    &:not(.nd-not-allowed) {
+      border-color: #5473E8;
+    }
+  }
+}
+
+.nd-not-allowed {
+  cursor: not-allowed;
+  color: #CBD0D6;
+  border: 1px solid #E7E7EA;
+  //background-color: var(--eas-border-color-light);
+  background-color: #F5F7FA;
+}

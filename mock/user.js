@@ -1,3 +1,4 @@
+import settings from '@/settings'
 // http://mockjs.com/examples.html#Object
 const loginInfo = () => {
   const result = {
@@ -11,7 +12,7 @@ const userInfo = () => {
     uid: 9527,
     avatar:
       'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    name: '灰是小灰灰的灰',
+    name: settings.title,
     phone: '15988888888',
     email: '454539387@qq.com',
     identity: '',
