@@ -74,6 +74,11 @@ const props = defineProps({
   },
 })
 const emit = defineEmits(['update:modelValue', 'change'])
+// 定义每小时的分钟数和每天的小时数
+const minutesPerHour = 60
+const hoursPerDay = 24
+const daysPerWeek = 7
+
 const state = reactive({
   weeks: ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
   downIndex: -1, // 按下鼠标节点
