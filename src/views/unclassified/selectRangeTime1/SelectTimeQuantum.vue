@@ -83,14 +83,13 @@
                 <!-- 加上该参数设置 :teleported="false"，解决选中时间段后el-popover弹窗会自动关闭的问题 -->
                 <div class="detail-box">
                   <el-time-picker
-                    v-if="timeLevel == 'mm'"
                     v-model="time.RangeTime"
                     :clearable="false"
                     style="width: 100%"
                     is-range
                     range-separator="-"
-                    format="HH:mm"
-                    value-format="HH:mm"
+                    format="HH:mm:ss"
+                    value-format="HH:mm:ss"
                     :teleported="false"
                     @change="(value) => timeChange(value, time)" />
                   <div
@@ -201,7 +200,7 @@ const prop = defineProps({
 })
 
 const state = reactive({
-  timeLevel: 'mm',
+  timeLevel: 'ss',
   width: prop.width,
   weekId: 'week' + new Date().getTime(),
   boxwidths: '',
@@ -299,6 +298,10 @@ const initFormatData = () => {
         // 计算时段宽度
         let st = formatSecond(val[state.props.startTime])
         let et = formatSecond(val[state.props.endTime])
+        console.log({
+          st,
+          et,
+        })
         val.width = (et - st) * state.secondWidth + 'px'
         // 计算时段定位
         val.pointX = st * state.secondWidth + 'px'
@@ -313,12 +316,19 @@ const initFormatData = () => {
 const formatSecond = (time) => {
   if (!time) return
   let t = time.split(':')
+  console.log(t)
   if (state.timeLevel === 'mm') {
     if (t.length !== 2) return
     // 去除前缀0
     let ht = t[0].replace(/^0/, '')
     let mt = t[1].replace(/^0/, '')
     return ht * 60 * 60 + mt * 60
+  } else {
+    // 去除前缀0
+    let ht = t[0].replace(/^0/, '')
+    let mt = t[1].replace(/^0/, '')
+    let st = t[2].replace(/^0/, '')
+    return ht * 60 * 60 + mt * 60 + +st
   }
 }
 
@@ -449,12 +459,16 @@ const recalcAttr = (temp) => {
       maxW = next_item.pointX.replace('px', '') * 1
     }
   }
-  // 拖拽左滑块
+  // 拖拽左滑块 存在边界没限制问题
   if (state.dageDom === 'start') {
     let width = temp.r_width * 1 + (temp.startX - temp.endX)
     point = point * 1 - (temp.startX - temp.endX)
     if (point < minX) {
       point = minX
+      width = temp.width.replace('px', '')
+    }
+    if (point > maxW + 2) {
+      point = maxW
       width = temp.width.replace('px', '')
     }
     if (temp.startX - temp.endX + temp.r_width * 1 < 0) {
@@ -646,6 +660,10 @@ onMounted(() => {
   if (state.weekList) {
     initFormatData()
   }
+})
+
+defineExpose({
+  initFormatData,
 })
 </script>
 <style lang="scss" scoped>

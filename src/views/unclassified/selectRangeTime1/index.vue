@@ -52,6 +52,7 @@
       </template>
     </el-dialog>-->
     <time-plan
+      :key="test"
       ref="PlanTime"
       :week-list="weekList"
       :width="formData.width"
@@ -69,6 +70,7 @@ import TimePlan from './SelectTimeQuantum.vue'
 const dataForm = ref()
 const dataFormRef = ref()
 const PlanTime = ref()
+const test = ref(false)
 const state = reactive({
   loading: true,
   // 选中ID数组
@@ -149,12 +151,56 @@ const state = reactive({
 const { loading, ids, formData, rules, dialog, weekList, taskRules } =
   toRefs(state)
 
+function mergeDataWithAdjacentTimes(data) {
+  const mergedData = []
+  let temp = data[0]
+
+  for (let i = 1; i < data.length; i++) {
+    if (temp.endTime === data[i].startTime) {
+      // 进来就会取反自己
+      test.value = !test.value
+      // 合并逻辑
+      temp.endTime = data[i].endTime
+      /*temp.pointX = `${
+        parseFloat(temp.pointX) + parseFloat(data[i].pointX)
+      }px`*/
+      temp.r_width = ''
+      temp.r_pointX = ''
+      /*  temp.r_pointX = `${
+        parseFloat(temp.r_pointX) + parseFloat(data[i].r_pointX)
+      }px`*/
+      temp.width = `${parseFloat(temp.width) + parseFloat(data[i].width)}px`
+      // temp.startX += data[i].startX
+      temp.endX = data[i].endX
+      temp.RangeTime = [temp.startTime, temp.endTime]
+
+      // 根据需要处理其他字段
+    } else {
+      mergedData.push(temp)
+      temp = data[i]
+    }
+  }
+  // 不要忘记添加最后一个元素
+  mergedData.push(temp)
+
+  return mergedData
+}
+
 /**
  * 时间分段组件回调函数
  */
 const selectBack = (list) => {
   // console.log(list)
-  state.weekList = list
+  state.weekList = list.map((item) => {
+    return {
+      ...item,
+      ...(item.timeList.length && {
+        // 合并开始时间和 结束时间一致的数据
+        timeList: mergeDataWithAdjacentTimes(item.timeList),
+      }),
+    }
+  })
+  console.log(state.weekList)
 }
 
 const clickHandler = (data) => {
@@ -181,13 +227,14 @@ const timeClick = () => {
  * 时间段编辑
  */
 const editClick = () => {
+  test.value = !test.value
   state.formData.taskName = '任务1'
   state.dialog.visible = true
   state.dialog.title = '时间段编辑'
   let timeList = [
     {
-      startTime: '09:00',
-      endTime: '18:00',
+      startTime: '05:23:10',
+      endTime: '16:10:20',
     },
   ]
   state.weekList.forEach((value, index) => {

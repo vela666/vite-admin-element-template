@@ -4,7 +4,9 @@
     <el-button @click="managementKanBan">管理仪表</el-button>
     <el-button @click="save">应用</el-button>
     <br />
-    <GridLayout dragHandle=".handler" ref="gridLayoutRef" v-model="items" />
+    <GridLayout dragHandle=".handler" ref="gridLayoutRef" v-model="items">
+      <Test />
+    </GridLayout>
     <LayoutManage :data="items" ref="layoutManageRef" @save="kanBanSave" />
   </main>
 </template>
@@ -15,6 +17,7 @@ import 'gridstack/dist/gridstack.min.css'
 import GridLayout from './components/GridLayout.vue'
 import LayoutManage from './components/LayoutManage.vue'
 import { differenceBy } from 'lodash-es'
+import Test from './Test.vue'
 const layoutManageRef = shallowRef(null)
 // const items = ref([])
 const items = ref(

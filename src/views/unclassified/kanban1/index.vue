@@ -29,6 +29,7 @@
             >启用或禁用调整大小</el-button
           >
           <el-button @click="cb({ type: 'remove' })">删我</el-button>
+          <el-button @click="cb({ type: 'update' })">更新</el-button>
         </div>
       </template>
     </GridLayout>

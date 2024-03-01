@@ -21,6 +21,7 @@
         <!--        <el-button @click="item.resize = true">禁用</el-button>-->
         <button @click="getData(item)">获取数据</button>
         <button @click="remove(item.mark)">remove</button>
+        <slot></slot>
       </div>
     </div>
   </div>

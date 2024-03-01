@@ -209,7 +209,10 @@ const operateHandler = (obj = {}) => {
       break
     case 'update':
       // val = {w: 12, h: 2, x: 0, y: 4, noResize: false } 任意一个字段 等
-      myGridStack.update(el, val)
+      console.log(el)
+      myGridStack.update(el, {
+        w: 12,
+      })
       updLayoutData()
       break
     case 'move':
