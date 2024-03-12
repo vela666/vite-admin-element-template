@@ -21,7 +21,7 @@
         <!--        <el-button @click="item.resize = true">禁用</el-button>-->
         <button @click="getData(item)">获取数据</button>
         <button @click="remove(item.mark)">remove</button>
-        <slot></slot>
+        <slot :item="item"></slot>
       </div>
     </div>
   </div>
@@ -153,6 +153,16 @@ const makeLayout = (id) => {
   })
 }
 
+const update = (el, val) => {
+  requestIdleCallback(() => {
+    console.log({
+      el,
+      val,
+    })
+    myGridStack.update(el, val)
+  })
+}
+
 const getSaveLayout = (saveContent = false, saveGridOpt = false) => {
   return myGridStack.save(saveContent, saveGridOpt).map((item) => {
     return {
@@ -230,7 +240,7 @@ const setExternalDrag = () => {
 // 加载布局
 const reloadLayout = (data = gridData.value) => {
   nextTick(() => {
-    myGridStack.load(data)
+    myGridStack.load(data, false)
   })
 }
 
@@ -278,6 +288,7 @@ watch(
 )
 
 defineExpose({
+  update,
   initLayout,
   makeLayout,
   reloadLayout,
