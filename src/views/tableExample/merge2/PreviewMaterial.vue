@@ -31,7 +31,7 @@
         class="iframe-container">
         <iframe
           :src="`${PUBLIC_PATH}iframes/youtobe-player.html?v=${getTouTobeId(
-            material[currentIndex].youtube_url,
+            material[currentIndex].youtube_url
           )}`"
           allowfullscreen="true"
           allowpaymentrequest="true"

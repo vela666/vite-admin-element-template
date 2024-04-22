@@ -9,7 +9,7 @@ export function toPascalCase(str, bool = true) {
   // const words = tmp.replace('/', '').split('-');
   const words = tmp.replace(firstAndLastSlash, '').split('-')
   const capitalizedWords = words.map(
-    (word) => word.charAt(0).toUpperCase() + word.slice(1),
+    (word) => word.charAt(0).toUpperCase() + word.slice(1)
   )
   // return capitalizedWords.join('-') || tmp; // creative-label === Creative-Label
   return capitalizedWords.join(bool ? '' : '-') || tmp // creative-label === CreativeLabel
@@ -88,7 +88,7 @@ export function generateRoute2(
   menus = [],
   notFirstLevel = false,
   needTiling = true,
-  parentPath = [],
+  parentPath = []
 ) {
   const routes = []
   menus.forEach((item) => {
@@ -124,14 +124,14 @@ export function generateRoute2(
       const parentMark = [...route.meta.hasParents, item.menu_path]
       if (notFirstLevel && needTiling) {
         routes.push(
-          ...generateRoute2(item.children, true, needTiling, parentMark),
+          ...generateRoute2(item.children, true, needTiling, parentMark)
         )
       } else {
         route.children = generateRoute2(
           item.children,
           true,
           needTiling,
-          parentMark,
+          parentMark
         )
         // 第一个路由添加 affix 标识 固定
         /*if (firstLoop) {
@@ -166,7 +166,7 @@ export function generateRoute3(
   menus = [],
   notFirstLevel = false,
   needTiling = true,
-  parentPath = [],
+  parentPath = []
 ) {
   const routes = []
 
@@ -203,14 +203,14 @@ export function generateRoute3(
 
       if (notFirstLevel && needTiling) {
         routes.push(
-          ...generateRoute3(item.children, true, needTiling, parentMark),
+          ...generateRoute3(item.children, true, needTiling, parentMark)
         )
       } else {
         route.children = generateRoute3(
           item.children,
           true,
           needTiling,
-          parentMark,
+          parentMark
         )
       }
     } else {
@@ -255,7 +255,7 @@ export function generateRoute3(
 export function generateRoute1(
   menus = [],
   notFirstLevel = false,
-  parentPath = [],
+  parentPath = []
 ) {
   const routes = []
 

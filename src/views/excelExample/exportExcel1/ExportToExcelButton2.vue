@@ -106,7 +106,7 @@ const downloadExcel = async () => {
     let buffer = await workbook.value.xlsx.writeBuffer()
     FileSaver.saveAs(
       new Blob([buffer]),
-      `${props.book.fileName}_${Date.now()}.xlsx`,
+      `${props.book.fileName}_${Date.now()}.xlsx`
     )
   } catch (err) {
     ElMessage.error(`excel导出失败，原因为：${err}`)

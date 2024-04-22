@@ -2,6 +2,4 @@
   <div class="">500</div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>

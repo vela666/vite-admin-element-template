@@ -159,13 +159,13 @@ const cascaderOption = computed(() => {
         value: item.experimentId,
       })
       return acc
-    }, {}),
+    }, {})
   )
 })
 const tableData = computed(() => {
   if (state.search.experiment.length) {
     return state.trafficData.hit.filter((item) =>
-      state.search.experiment.includes(item.experimentId),
+      state.search.experiment.includes(item.experimentId)
     )
   }
   return state.trafficData.hit
@@ -218,7 +218,7 @@ const mergeHanlder = ({ row, column, rowIndex, columnIndex }) => {
 const viewResults = (row, componentName) => {
   flowDiagnosisDrawerRef.value.open(
     state.experiment[row.experimentId],
-    componentName,
+    componentName
   )
 }
 
@@ -242,7 +242,7 @@ const getFlowDiagnosis = () => {
 
   // 按照数据长度排序
   state.trafficData.hit.sort(
-    (a, b) => state.layer[a.layerId].length - state.layer[b.layerId].length,
+    (a, b) => state.layer[a.layerId].length - state.layer[b.layerId].length
   )
 }
 getFlowDiagnosis()

@@ -8,16 +8,16 @@ const useSettingsStore = defineStore({
   id: 'settings',
   state: () => {
     const localTagsView = JSON.parse(
-      localStorage.getItem('tagsView') || tagsView,
+      localStorage.getItem('tagsView') || tagsView
     )
     const localFixedHeader = JSON.parse(
-      localStorage.getItem('fixedHeader') || fixedHeader,
+      localStorage.getItem('fixedHeader') || fixedHeader
     )
     const localSidebarLogo = JSON.parse(
-      localStorage.getItem('sidebarLogo') || sidebarLogo,
+      localStorage.getItem('sidebarLogo') || sidebarLogo
     )
     const localLayoutMod = JSON.parse(
-      JSON.stringify(localStorage.getItem('layoutMod') || layoutMod),
+      JSON.stringify(localStorage.getItem('layoutMod') || layoutMod)
     )
 
     return {

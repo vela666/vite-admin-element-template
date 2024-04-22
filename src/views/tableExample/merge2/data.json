@@ -34,22 +34,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -163,10 +153,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0A",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
@@ -287,10 +274,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0B",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
@@ -411,10 +395,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0C",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
@@ -461,22 +442,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -590,10 +561,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0D",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "111111111111111111111111111111111111111111111111111aa"
                 ],
@@ -714,10 +682,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0E",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "111111111111111111111111111111111111111111111111111aa"
                 ],
@@ -914,22 +879,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -1029,9 +984,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -1145,9 +1098,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -1304,22 +1255,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -1419,9 +1360,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "1"
-                ],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -1591,22 +1530,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -1720,10 +1649,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
@@ -1844,10 +1770,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
@@ -1968,10 +1891,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
@@ -2092,10 +2012,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
@@ -2229,13 +2146,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "1"
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -2366,10 +2278,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
@@ -2503,10 +2412,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "111111111111111111111111111111111111111111111111111111111111"
                 ],
@@ -2640,13 +2546,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -2777,13 +2678,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -2914,10 +2810,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
@@ -3051,13 +2944,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "if you like me,please jump up tell me 40"
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["if you like me,please jump up tell me 40"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -3188,13 +3076,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "Do you know my string length 31"
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["Do you know my string length 31"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -3325,13 +3208,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "if you like me,please tell me."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["if you like me,please tell me."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -3375,22 +3253,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -3504,10 +3372,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "111111111111111111111111111111111111111111111111111aa"
                 ],
@@ -3782,9 +3647,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "1"
-                ],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -4193,9 +4056,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -4330,9 +4191,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -4604,9 +4463,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "if you like me,please jump up tell me 40"
-                ],
+                "descriptions": ["if you like me,please jump up tell me 40"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -4741,9 +4598,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "Do you know my string length 31"
-                ],
+                "descriptions": ["Do you know my string length 31"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -4787,22 +4642,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -4920,9 +4765,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "if you like me,please tell me."
-                ],
+                "descriptions": ["if you like me,please tell me."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -5331,9 +5174,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "1"
-                ],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -5742,9 +5583,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -5879,9 +5718,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -6153,9 +5990,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "if you like me,please jump up tell me 40"
-                ],
+                "descriptions": ["if you like me,please jump up tell me 40"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -6199,22 +6034,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -6332,9 +6157,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "Do you know my string length 31"
-                ],
+                "descriptions": ["Do you know my string length 31"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -6469,9 +6292,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "if you like me,please tell me."
-                ],
+                "descriptions": ["if you like me,please tell me."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -6880,9 +6701,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "1"
-                ],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -7291,9 +7110,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -7428,9 +7245,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -7611,22 +7426,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -7744,9 +7549,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "if you like me,please jump up tell me 40"
-                ],
+                "descriptions": ["if you like me,please jump up tell me 40"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -7881,9 +7684,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "Do you know my string length 31"
-                ],
+                "descriptions": ["Do you know my string length 31"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -8018,9 +7819,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "if you like me,please tell me."
-                ],
+                "descriptions": ["if you like me,please tell me."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -8429,9 +8228,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "1"
-                ],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -8840,9 +8637,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -8977,9 +8772,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -9023,22 +8816,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -9293,9 +9076,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "if you like me,please jump up tell me 40"
-                ],
+                "descriptions": ["if you like me,please jump up tell me 40"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -9430,9 +9211,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "Do you know my string length 31"
-                ],
+                "descriptions": ["Do you know my string length 31"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -9567,9 +9346,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "if you like me,please tell me."
-                ],
+                "descriptions": ["if you like me,please tell me."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -9819,10 +9596,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
@@ -9935,13 +9709,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "1"
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -10051,10 +9820,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
@@ -10167,10 +9933,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "111111111111111111111111111111111111111111111111111111111111"
                 ],
@@ -10283,13 +10046,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -10330,22 +10088,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -10441,13 +10189,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -10557,10 +10300,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
@@ -10673,13 +10413,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "if you like me,please jump up tell me 40"
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["if you like me,please jump up tell me 40"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -10789,13 +10524,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "Do you know my string length 31"
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["Do you know my string length 31"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -10905,13 +10635,8 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
-                "descriptions": [
-                  "if you like me,please tell me."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
+                "descriptions": ["if you like me,please tell me."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -11021,10 +10746,7 @@
                 "ad_id": "",
                 "ad_name": "广告_0",
                 "ad_status": "ACTIVE",
-                "headlines": [
-                  "1",
-                  "my length is 29,if you blive."
-                ],
+                "headlines": ["1", "my length is 29,if you blive."],
                 "descriptions": [
                   "111111111111111111111111111111111111111111111111111aa"
                 ],
@@ -11257,9 +10979,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "1"
-                ],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -11532,22 +11252,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -11647,9 +11357,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -11763,9 +11471,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -11995,9 +11701,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "if you like me,please jump up tell me 40"
-                ],
+                "descriptions": ["if you like me,please jump up tell me 40"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -12111,9 +11815,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "Do you know my string length 31"
-                ],
+                "descriptions": ["Do you know my string length 31"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -12227,9 +11929,7 @@
                   "my length is 28.please qu...",
                   "1296 已解决 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "if you like me,please tell me."
-                ],
+                "descriptions": ["if you like me,please tell me."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -12575,9 +12275,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "1"
-                ],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -12734,22 +12432,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -12965,9 +12653,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -13081,9 +12767,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -13313,9 +12997,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "if you like me,please jump up tell me 40"
-                ],
+                "descriptions": ["if you like me,please jump up tell me 40"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -13429,9 +13111,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "Do you know my string length 31"
-                ],
+                "descriptions": ["Do you know my string length 31"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -13545,9 +13225,7 @@
                   "if you like me,please jump up tell me 40",
                   "1296 新增后列表无刚刚新增的文案，需手动刷新后才出现"
                 ],
-                "descriptions": [
-                  "if you like me,please tell me."
-                ],
+                "descriptions": ["if you like me,please tell me."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -13893,9 +13571,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "1"
-                ],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -13936,22 +13612,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -14283,9 +13949,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -14399,9 +14063,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -14631,9 +14293,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "if you like me,please jump up tell me 40"
-                ],
+                "descriptions": ["if you like me,please jump up tell me 40"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -14747,9 +14407,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "Do you know my string length 31"
-                ],
+                "descriptions": ["Do you know my string length 31"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -14863,9 +14521,7 @@
                   "Do you know my string length 31",
                   "if you like me,please tell me."
                 ],
-                "descriptions": [
-                  "if you like me,please tell me."
-                ],
+                "descriptions": ["if you like me,please tell me."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -15138,22 +14794,12 @@
           "app_store": 3,
           "app_id": "com.zaful",
           "bidding_strategy_goal_type": 4,
-          "conversion_action_ids": [
-            "886798478",
-            "888534912"
-          ]
+          "conversion_action_ids": ["886798478", "888534912"]
         },
         "criterion": {
           "location_ids": [],
           "negative_location_ids": [],
-          "language_ids": [
-            1004,
-            1000,
-            1001,
-            1003,
-            1005,
-            1002
-          ]
+          "language_ids": [1004, 1000, 1001, 1003, 1005, 1002]
         },
         "adset_list": [
           {
@@ -15253,9 +14899,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "1"
-                ],
+                "descriptions": ["1"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -15601,9 +15245,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "my length is 29,if you blive."
-                ],
+                "descriptions": ["my length is 29,if you blive."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -15717,9 +15359,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "my length is 28.please qu..."
-                ],
+                "descriptions": ["my length is 28.please qu..."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -15949,9 +15589,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "if you like me,please jump up tell me 40"
-                ],
+                "descriptions": ["if you like me,please jump up tell me 40"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -16065,9 +15703,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "Do you know my string length 31"
-                ],
+                "descriptions": ["Do you know my string length 31"],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",
@@ -16181,9 +15817,7 @@
                   "111111111111111111111111111111111111111111111111111aa",
                   "11111111111111111111111111111111111111111111111111111111111啊"
                 ],
-                "descriptions": [
-                  "if you like me,please tell me."
-                ],
+                "descriptions": ["if you like me,please tell me."],
                 "image_urls": [
                   "https://res-cdn-test.fineboost.cn/new-res/0764365c27724950bff61a69a4b01eae7/image/3db394a45163889507dc0956c192956c.png",
                   "https://res-cdn-test.fineboost.cn/new-res/a99334228e574b45b59b2d080f8a087a8/image/e76374780c362d57133fda4133299ca3.png",

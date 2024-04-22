@@ -90,7 +90,7 @@ const setClass = (value, innerValue) => {
     dayjs(dateVal.value),
     dayjs(b),
     'day',
-    '()',
+    '()'
   )
   if (isWithinRange) return 'in-range'
 }

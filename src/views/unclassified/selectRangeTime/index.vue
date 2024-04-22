@@ -110,7 +110,7 @@ const handleChecked = (value) => {
     }
   })
   const checkedWeeks = weeks.filter(
-    (item) => item.filter((item) => item.length > 0).length > 0,
+    (item) => item.filter((item) => item.length > 0).length > 0
   )
 
   emit(
@@ -137,7 +137,7 @@ const handleChecked = (value) => {
         })
         return modelValue
       })
-      .flat(),
+      .flat()
   )
   emit('change')
 

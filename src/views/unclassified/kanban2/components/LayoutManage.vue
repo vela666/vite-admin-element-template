@@ -87,12 +87,12 @@ let rightData = ref(
       minH: item.minH ?? item.h,
       mark: `grid-item-${item.id}`,
     }
-  }),
+  })
 )
 
 const testRight = computed(() => {
   return rightData.value.filter(
-    (right) => !items.value.map((v) => +v.id).includes(+right.id),
+    (right) => !items.value.map((v) => +v.id).includes(+right.id)
   )
 })
 

@@ -62,7 +62,7 @@ export function autoUpdateElementPos(current, target, arrowEl) {
     },
     {
       // ancestorScroll: false,
-    },
+    }
   )
   /* // Intersection Observer 回调函数
       const callback = (entries, observer) => {

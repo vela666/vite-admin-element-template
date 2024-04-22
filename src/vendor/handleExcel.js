@@ -34,7 +34,7 @@ export function exportToExcel(data) {
     new URL('@/workers/exportExcel.worker.js', import.meta.url),
     {
       type: 'module',
-    },
+    }
   )
 
   // 发送数据给 Web Worker 进行处理
@@ -58,7 +58,7 @@ export async function importExcel(file) {
       new URL('@/workers/importExcel.worker.js', import.meta.url),
       {
         type: 'module',
-      },
+      }
     )
 
     // 发送数据给 Web Worker 进行处理

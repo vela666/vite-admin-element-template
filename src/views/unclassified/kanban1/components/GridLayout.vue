@@ -180,7 +180,7 @@ const setExternalDrag = () => {
     },
     {
       timeout: 300,
-    },
+    }
   )
 }
 
@@ -236,7 +236,7 @@ const initLayout = () => {
   myGridStack = GridStack.init(
     gridOptions,
     // 指定容器区分实例
-    `#${props.boxCls}`,
+    `#${props.boxCls}`
   )
   //更改位置/大小
   myGridStack.on(
@@ -244,7 +244,7 @@ const initLayout = () => {
     debounce((event, items) => {
       console.log('change')
       updLayoutData()
-    }),
+    })
   )
   // 添加
   myGridStack.on('added', (event, items) => {
@@ -273,7 +273,7 @@ const initLayout = () => {
           },
         },
         // 插槽
-        slots,
+        slots
       )
       // Render the vue node into the item element
       render(itemContentVNode, itemElContent)

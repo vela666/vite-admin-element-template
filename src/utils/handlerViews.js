@@ -12,7 +12,7 @@ const defaultPath = '/src/views/'
 
 // 获取views下 过滤reolad|login|error等这些文件夹下 index.vue文件
 const dynamicRoutesModules = import.meta.glob(
-  '@/views/!(reolad|login|error)**/index.vue',
+  '@/views/!(reolad|login|error)**/index.vue'
 )
 
 // 剔除components文件夹下的组件
@@ -29,7 +29,7 @@ const metaModules = import.meta.glob(
   {
     eager: true,
     import: 'default',
-  },
+  }
 )
 
 export { dynamicRoutesModules, metaModules, defaultPath }

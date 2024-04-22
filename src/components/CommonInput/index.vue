@@ -4,8 +4,7 @@
     :clearable="clearable"
     v-model="value"
     :placeholder="desc"
-    v-bind="$attrs"
-  >
+    v-bind="$attrs">
     <template #prefix v-if="prefixSlot">
       <SvgIcon class="c86919d" name="search" />
     </template>

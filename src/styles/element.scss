@@ -1,36 +1,28 @@
-// 自定表格样式
-.n-table-custom-css {
-  width: 100%;
-  &.#{$customNameSpace}-table {
-    thead {
-      > tr {
-        > th {
-          //background-color:  #f0f2f5 !important;
-        }
-      }
-    }
-  }
-  // 隐藏除了第一行的右侧边框
-  &.#{$customNameSpace}-table--border{
-    thead {
-      > tr {
-        > th {
-          //border-right: 1px solid  !important;
-        }
-      }
-    }
-    .#{$customNameSpace}-table__cell {
-      //border-right: none ;
-    }
-  }
-}
-.#{$customNameSpace}-table {
-  // 表格某行列没有数据的情况下，显示--
-  tbody td .cell:empty::after {
-    content: '--';
-  }
-  //
-  .#{$customNameSpace}-popper {
-    max-width: 350px;
-  }
-}
+@use 'config/config' as *;
+
+@forward 'element-plus/theme-chalk/src/mixins/config' with (
+  $namespace: $customNameSpace
+);
+
+// 重置主题色
+@forward 'element-plus/theme-chalk/src/common/var' with (
+  $colors: (
+    'primary': (
+      'base': #5473e8,
+    ),
+    'success': (
+      'base': #1ecc57,
+    ),
+    'warning': (
+      'base': #ff9f24,
+    ),
+    'danger': (
+      'base': #f56c6c,
+    ),
+    'error': (
+      'base': #f56c6c,
+    ),
+  )
+);
+
+@use 'element-plus/theme-chalk/src/index' as *;

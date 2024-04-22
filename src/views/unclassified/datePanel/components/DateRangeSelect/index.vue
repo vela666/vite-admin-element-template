@@ -282,10 +282,10 @@ const popperConfig = computed(() => {
 
 const allStatic = computed(
   () =>
-    state.startStaticOrDynamicType === 2 && state.endStaticOrDynamicType === 2,
+    state.startStaticOrDynamicType === 2 && state.endStaticOrDynamicType === 2
 )
 const endExceedStart = computed(() =>
-  dayjs(state.end).isBefore(dayjs(state.start)),
+  dayjs(state.end).isBefore(dayjs(state.start))
 )
 
 const show = () => {
@@ -565,13 +565,13 @@ const setDateSelected = debounce(
     state.end = date[1]
     dateChange(
       '',
-      type ?? (val.shortcutType || dateLabelEnum[state.dynamicDateText]),
+      type ?? (val.shortcutType || dateLabelEnum[state.dynamicDateText])
     )
     if (execute) {
       notExecute = false
       emit('update:modelValue', mappingParams())
     }
-  },
+  }
 )
 
 const radioGroupChange = () => {
@@ -596,7 +596,7 @@ watch(
   (val) => {
     notExecute && setDateSelected(val, val.shortcutType)
     notExecute = true
-  },
+  }
 )
 
 defineExpose({

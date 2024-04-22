@@ -139,7 +139,7 @@ const items = ref(
       minH: item.h ?? 4,
       // maxH: 8,
     }
-  }),
+  })
 )
 
 /*const items = ref(

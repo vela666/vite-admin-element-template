@@ -96,13 +96,13 @@ export default defineComponent({
         // 半选状态
         indeterminate: computed(() => {
           const checkedList = state.tableData.campaign_list.filter(
-            (item) => item.checked || item.indeterminate,
+            (item) => item.checked || item.indeterminate
           )
           // let mark = !state.tableData.campaign_list.every(parent => parent.adset_list.every(unit => unit.checked))
           let mark = !state.tableData.campaign_list.every((parent) =>
             parent.adset_list.every((adset) => {
               return adset.ad_list.every((ad) => ad.checked)
-            }),
+            })
           )
           return !!checkedList.length && mark
         }),
@@ -110,7 +110,7 @@ export default defineComponent({
         checkAll: computed({
           get() {
             const checkedList = state.tableData.campaign_list.filter(
-              (item) => item.checked,
+              (item) => item.checked
             )
             // return !!checkedList.length && checkedList.length === state.tableData.campaign_list.length
             return checkedList.length === state.tableData.campaign_list.length
@@ -165,7 +165,7 @@ export default defineComponent({
         disabled: computed(
           () =>
             state.tableData.campaign_list.filter((item) => item.disabled)
-              .length === state.tableData.campaign_list.length,
+              .length === state.tableData.campaign_list.length
         ),
       }
     }
@@ -191,7 +191,7 @@ export default defineComponent({
       state.tableData = initVal()
       data.campaign_list = data.campaign_list.filter((item) => {
         item.adset_list = item.adset_list.filter(
-          (adset) => adset.ad_list.length,
+          (adset) => adset.ad_list.length
         )
         return item.adset_list.length
       })
@@ -267,7 +267,7 @@ export default defineComponent({
           })
           return arr
         },
-        [],
+        []
       )
       console.log(state.tableRowLists)
     }
@@ -326,11 +326,11 @@ export default defineComponent({
           })
         })
         campaign.adset_list = campaign.adset_list.filter(
-          (item) => item.ad_list.length,
+          (item) => item.ad_list.length
         )
       })
       tmpData.campaign_list = tmpData.campaign_list.filter(
-        (item) => item.adset_list.length,
+        (item) => item.adset_list.length
       )
       console.log([tmpData], '提交')
       updAuditStatusHandler()
@@ -372,14 +372,14 @@ export default defineComponent({
             confirmButtonText: '确定',
             cancelButtonText: '取消',
             type: 'warning',
-          },
+          }
         )
         console.log(
           {
             index_list: params,
             task_id,
           },
-          '取消',
+          '取消'
         )
 
         updAuditStatusHandler()
@@ -404,7 +404,7 @@ export default defineComponent({
             ...params,
             task_id,
           },
-          '删除',
+          '删除'
         )
         updAuditStatusHandler()
       } catch (e) {

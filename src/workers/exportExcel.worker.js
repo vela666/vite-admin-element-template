@@ -48,7 +48,7 @@ const createWorkSheet = (workbook, sheetName, sheetData) => {
         column.width || 0,
         cell.value
           ? countCharacters(findLongestParagraph(cell.value.toString())) + 2
-          : 10,
+          : 10
       )
 
       column.width = columnWidth

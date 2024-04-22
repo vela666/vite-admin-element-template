@@ -233,7 +233,7 @@ const setExternalDrag = () => {
     },
     {
       timeout: 300,
-    },
+    }
   )
 }
 
@@ -251,7 +251,7 @@ const initLayout = () => {
   myGridStack = GridStack.init(
     gridOptions,
     // 指定容器区分实例
-    `#${props.boxCls}`,
+    `#${props.boxCls}`
   )
   myGridStack.on('dragstop', (event, el) => {
     console.log('dragstop')
@@ -284,7 +284,7 @@ watch(
   }),
   {
     deep: true,
-  },
+  }
 )
 
 defineExpose({

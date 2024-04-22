@@ -1,14 +1,14 @@
 //@charset "UTF-8";
 //@import './config/variables.scss';
 // 解决按需引入 后又手动导入 无样式  该方式使用时 import { ElMessage } from 'element-plus'
-@use 'element-plus/theme-chalk/src/message.scss';
-@use 'element-plus/theme-chalk/src/message-box.scss';
+//@use 'element-plus/theme-chalk/src/message.scss';
+//@use 'element-plus/theme-chalk/src/message-box.scss';
 // 全局引入时又改了 命名空间
 //@use "element-plus/theme-chalk/src/index.scss" as *;
 
 // 让下面的scss文件可以使用变量
-@use "./config/config.scss" as * ;
-@use "./config/variables.scss" as * ;
+@use './config/config.scss' as *;
+@use './config/variables.scss' as *;
 
 @import 'vxe-table/styles/variable.scss';
 @import 'vxe-table/styles/cssvar.scss';
@@ -39,7 +39,7 @@
   line-height: 32px;
   background-color: #fff;
   font-size: 14px;
-  color: #545E6E;
+  color: #545e6e;
 
   .el-icon-arrow-down {
     position: absolute;
@@ -50,15 +50,15 @@
 
   &:hover {
     &:not(.nd-not-allowed) {
-      border-color: #5473E8;
+      border-color: #5473e8;
     }
   }
 }
 
 .nd-not-allowed {
   cursor: not-allowed;
-  color: #CBD0D6;
-  border: 1px solid #E7E7EA;
+  color: #cbd0d6;
+  border: 1px solid #e7e7ea;
   //background-color: var(--eas-border-color-light);
-  background-color: #F5F7FA;
+  background-color: #f5f7fa;
 }

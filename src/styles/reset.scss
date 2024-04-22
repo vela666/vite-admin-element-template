@@ -1,15 +1,25 @@
-@import "reset.css";
+@import 'reset.css';
 
 body {
   box-sizing: border-box;
   min-width: 1440px;
   height: 100%;
-  font: 12px/1.5 Microsoft YaHei, Microsoft YaHei-Regular, sans-serif;
+  font:
+    12px/1.5 Microsoft YaHei,
+    Microsoft YaHei-Regular,
+    sans-serif;
   color: $color-616161;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    PingFang SC,
+    Hiragino Sans GB,
+    Microsoft YaHei,
+    Arial,
+    sans-serif;
   //overflow-x: hidden;
   overflow-anchor: none;
   overscroll-behavior-y: none;
@@ -29,7 +39,8 @@ textarea {
 }
 
 // 重置所有滚动条
-*, div {
+*,
+div {
   &::-webkit-scrollbar {
     width: 8px;
     height: 8px;

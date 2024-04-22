@@ -3,12 +3,11 @@
     :style="`min-width: ${width}; min-height: ${height}`"
     id="chart"
     ref="chart"
-    class="chart"
-  ></div>
+    class="chart"></div>
 </template>
 <script>
 export default {
-  name: 'Chart'
+  name: 'Chart',
 }
 </script>
 <script setup>
@@ -53,16 +52,16 @@ const props = defineProps({
     type: Object,
     default() {
       return {}
-    }
+    },
   },
   width: {
     type: String,
-    default: '100%'
+    default: '100%',
   },
   height: {
     type: String,
-    default: '200px'
-  }
+    default: '200px',
+  },
 })
 // 获取真实DOM
 let chart = ref()
@@ -95,14 +94,14 @@ watch(
   () => props.options,
   (val) => {
     myChart.value.setOption(props.options, {
-      notMerge: true
+      notMerge: true,
     })
     // initEcharts(props.options)
   },
   { deep: true }
 )
 defineExpose({
-  myChart
+  myChart,
 })
 </script>
 

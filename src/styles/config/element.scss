@@ -1,5 +1,0 @@
-@use "./config.scss" as *;
-
-@forward 'element-plus/theme-chalk/src/mixins/config.scss' with (
-  $namespace: $customNameSpace
-);

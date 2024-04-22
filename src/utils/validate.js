@@ -112,7 +112,7 @@ export function validPhone(arg) {
   const val = String(arg).trim()
   if (
     !/^(0|86|17951)?(13[0-9]|14[0-9]|15[0-9]|16[0-9]|17[0-9]|18[0-9])[0-9]{8}$/i.test(
-      val,
+      val
     )
   ) {
     pass = false

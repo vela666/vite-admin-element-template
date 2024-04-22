@@ -393,7 +393,7 @@ const mouseupEnd = (event) => {
     if (state.temp && state.temp.isPre) {
       state.weekList[state.activeTime[0]][state.props.timeList].splice(
         item_index,
-        1,
+        1
       )
     }
     state.temp.temporary = false
@@ -596,7 +596,7 @@ const confirmCopy = (index) => {
   // 复制时段
   state.copyList.forEach((ind) => {
     state.weekList[ind][state.props.timeList] = deepClone(
-      state.weekList[index][state.props.timeList],
+      state.weekList[index][state.props.timeList]
     )
   })
   closePopover(index)

@@ -1,3 +1,8 @@
+```控制台警告
+The CJS build of Vite's Node API is deprecated. See https://vitejs.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.
+vite-plugin-mock版本问题
+```
+
 ```
 对应src/store/modules/data/menu2.js结构 和views的目录
 在src/store/modules/permission.js下

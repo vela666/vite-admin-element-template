@@ -19,7 +19,7 @@
           <div class="flex-center flex-direction-column">
             <span
               v-for="(stageVal, stageIndex) of dataSegmentation(
-                item.row[item.column.field],
+                item.row[item.column.field]
               )"
               :key="stageIndex">
               {{ thousandsFilter(stageVal) }}
@@ -86,7 +86,7 @@ const dataSegmentation = (data = '', key = delimiter) => {
 // 表格差异率计算
 const diffCalculation = (data) => {
   let [num1, num2] = dataSegmentation(data).map((item) =>
-    Number.parseFloat(item),
+    Number.parseFloat(item)
   )
   let val = (((num1 - num2) / (num2 === 0 ? 100 : num2)) * 100).toFixed(2)
   if (isNaN(val)) return '-'
@@ -108,7 +108,7 @@ const loadColumnAndData = (colSize, rowSize) => {
         params: {
           showDiff: index >= 3,
         },
-      })),
+      }))
     )
     xGrid.value.reloadData(tableData.slice(0, 5))
     gridOptions.loading = false

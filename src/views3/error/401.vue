@@ -1,6 +1,8 @@
 <template>
   <div class="errPage-container">
-    <el-button icon="el-icon-arrow-left" class="pan-back-btn" @click="back"> 返回 </el-button>
+    <el-button icon="el-icon-arrow-left" class="pan-back-btn" @click="back">
+      返回
+    </el-button>
     <el-row>
       <el-col :span="12">
         <h1 class="text-jumbo text-ginormous">Oops!</h1>
@@ -17,7 +19,11 @@
         </ul>
       </el-col>
       <el-col :span="12">
-        <img :src="errGif" width="313" height="428" alt="Girl has dropped her ice cream." />
+        <img
+          :src="errGif"
+          width="313"
+          height="428"
+          alt="Girl has dropped her ice cream." />
       </el-col>
     </el-row>
     <el-dialog v-model="dialogVisible" title="随便看">
@@ -33,19 +39,21 @@ import { useRouter, useRoute } from 'vue-router'
 const router = useRouter()
 const route = useRoute()
 
-const errGif = ref( img_err + '?' + new Date() )
-const ewizardClap = ref( 'https://wpimg.wallstcn.com/007ef517-bafd-4066-aae4-6883632d9646' )
-const dialogVisible = ref( false )
+const errGif = ref(img_err + '?' + new Date())
+const ewizardClap = ref(
+  'https://wpimg.wallstcn.com/007ef517-bafd-4066-aae4-6883632d9646'
+)
+const dialogVisible = ref(false)
 
 function showImg() {
   dialogVisible.value = true
 }
 
 function back() {
-  if ( route.query.noGoBack ) {
-    router.push( '/' )
+  if (route.query.noGoBack) {
+    router.push('/')
   } else {
-    router.go( -1 )
+    router.go(-1)
   }
 }
 </script>

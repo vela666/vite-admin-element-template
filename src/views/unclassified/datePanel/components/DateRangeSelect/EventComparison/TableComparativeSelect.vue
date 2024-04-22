@@ -10,14 +10,12 @@
     }px`"
     @change="(val) => emit('change', val)"
     v-model="selectedStageTableIndex"
-    placeholder="请选择"
-  >
+    placeholder="请选择">
     <el-option
       v-for="(item, index) of versus"
       :key="`versus` + index"
       :label="`阶段：${item.mainName}`"
-      :value="index + 1"
-    >
+      :value="index + 1">
       <span>
         {{ item.mainName }}
       </span>

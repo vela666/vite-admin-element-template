@@ -1,4 +1,7 @@
 import { createApp } from 'vue'
+// 引入ElementPlus
+import ElementPlus from 'element-plus'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import App from './App.vue'
 import router from './router'
 import { registerStore } from '@/store'
@@ -25,6 +28,10 @@ import '@/plugins/dayjs'
 const app = createApp(App)
 
 const initApp = async () => {
+  app.use(ElementPlus, {
+    locale: zhCn,
+    namespace: 'el',
+  })
   app.use(router)
   registerStore(app)
   await router.isReady()

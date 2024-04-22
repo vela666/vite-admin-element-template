@@ -65,7 +65,7 @@ const layout = ref(
   ].map((item) => ({
     ...item,
     minH: item.h,
-  })),
+  }))
 )
 
 const gridLayoutRef = ref()

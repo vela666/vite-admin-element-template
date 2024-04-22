@@ -77,7 +77,7 @@ let routes = Object.entries(dynamicRoutesModules).map(
         path.split('/').filter(Boolean).length === 1 ? Layout : component,
       meta: metaModules[metaPath] || {},
     }
-  },
+  }
 )
 
 function buildTree(data) {
@@ -94,7 +94,7 @@ function buildTree(data) {
       if (parentItem) {
         parentItem.children.push(map[item.path])
         parentItem.children.sort(
-          (a, b) => (a.meta.sort || Infinity) - (b.meta.sort || Infinity),
+          (a, b) => (a.meta.sort || Infinity) - (b.meta.sort || Infinity)
         )
       }
     } else {
@@ -116,5 +116,5 @@ function getParentPath(path) {
 }
 
 export default buildTree(routes).sort(
-  (a, b) => (a.meta.sort || Infinity) - (b.meta.sort || Infinity),
+  (a, b) => (a.meta.sort || Infinity) - (b.meta.sort || Infinity)
 )

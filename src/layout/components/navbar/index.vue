@@ -19,12 +19,12 @@
         v-show="appStore.device !== 'mobile'" />
 
       <ScreenFull id="screenfull" class="p8 hover-effect" />
-
+      <!--
       <el-tooltip content="全局size设置" effect="dark" placement="bottom">
         <size-select id="size-select" class="p8 hover-effect" />
-      </el-tooltip>
+      </el-tooltip>-->
 
-      <LangSelect class="p8 hover-effect" />
+      <!--      <LangSelect class="p8 hover-effect" />-->
 
       <el-dropdown
         class="p8 avatar-container right-menu-item hover-effect"

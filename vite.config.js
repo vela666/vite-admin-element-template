@@ -128,11 +128,13 @@ export default defineConfig(({ command, mode }) => {
     },
     // build.minify为 esbuild
     esbuild: {
+      // 删除console || debugger 等
+      pure: ['console.log', 'console.warn'],
       // 只删除 console.log 和debugger
       // pure: ['console.log'], // 删除 console.log
-      // drop: ['debugger'], // 删除 debugger
+      drop: ['debugger'], // 删除 debugger
       // 删除所有的console语句和debugger，包括console.log、console.warn、console.error等
-      drop: ['console', 'debugger'],
+      // drop: ['console', 'debugger'],
     },
   }
 })

@@ -126,7 +126,7 @@ watch(
   routes,
   async () => {
     searchPool.value = generateRoutes(routes.value)
-  },
+  }
   // { immediate : true }
 )
 watch(
@@ -134,7 +134,7 @@ watch(
   async (list) => {
     console.log(list)
     initFuse(list)
-  },
+  }
   // { immediate : true }
 )
 watch(
@@ -145,7 +145,7 @@ watch(
     } else {
       document.body.removeEventListener('click', close)
     }
-  },
+  }
   // { immediate : true }
 )
 

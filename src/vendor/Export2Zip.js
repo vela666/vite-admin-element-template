@@ -23,6 +23,6 @@ export function export_txt_to_zip(th, jsonData, txtName, zipName) {
       },
       (err) => {
         alert('导出失败')
-      },
+      }
     )
 }

@@ -59,7 +59,7 @@ const drawerClose = () => {
 
 const open = async (data, componentName) => {
   currentComponent.value = tabsPane.find(
-    (item) => item.is.name === componentName,
+    (item) => item.is.name === componentName
   ).is
   title.value = data[0].experimentName
   tabsData.value.PreDiagnosis = data

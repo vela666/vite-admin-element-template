@@ -1,6 +1,6 @@
 // 本地写好的路由  src/router/routes.js里的 asyncRoutes
-import Layout from "@/layout/index.vue";
-const data =  [
+import Layout from '@/layout/index.vue'
+const data = [
   {
     path: '/',
     component: Layout,
@@ -91,7 +91,7 @@ const data =  [
               {
                 path: '/nested/menu1/menu1-2/menu1-2-1',
                 component: () =>
-                    import('@/views/nested/menu1/menu1-2/menu1-2-1'),
+                  import('@/views/nested/menu1/menu1-2/menu1-2-1'),
                 name: 'Menu1-2-1',
                 meta: {
                   title: 'menu1-2-1',
@@ -101,7 +101,7 @@ const data =  [
               {
                 path: '/nested/menu1/menu1-2/menu1-2-2',
                 component: () =>
-                    import('@/views/nested/menu1/menu1-2/menu1-2-2'),
+                  import('@/views/nested/menu1/menu1-2/menu1-2-2'),
                 name: 'Menu1-2-2',
                 meta: {
                   title: 'menu1-2-2',

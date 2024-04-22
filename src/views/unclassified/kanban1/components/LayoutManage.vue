@@ -85,7 +85,7 @@ let rightData = ref(
       ...item,
       minH: item.minH ?? item.h,
     }
-  }),
+  })
 )
 
 const layoutData = computed(() => {
@@ -93,7 +93,7 @@ const layoutData = computed(() => {
 })
 const testRight = computed(() => {
   return rightData.value.filter(
-    (right) => !items.value.map((v) => +v.id).includes(+right.id),
+    (right) => !items.value.map((v) => +v.id).includes(+right.id)
   )
 })
 
@@ -137,8 +137,8 @@ const save = () => {
         return {
           ...item,
         }
-      }),
-    ),
+      })
+    )
   )
   drawerTabVisible.value = false
 }

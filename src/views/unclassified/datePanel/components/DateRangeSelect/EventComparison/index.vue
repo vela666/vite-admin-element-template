@@ -194,7 +194,7 @@ const stopWatch = watch(
   }),
   {
     deep: true,
-  },
+  }
 )
 defineOptions({
   name: 'EventComparison',

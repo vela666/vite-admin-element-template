@@ -6,17 +6,16 @@
     </div>
     <div class="rule-tree-view">
       <RuleItem
-          ref="childRuleItem"
-          @removeRuleNode="removeRuleNode"
-          :depth="1"
-          :filterRuleConfig="filterRuleConfig"
-      />
+        ref="childRuleItem"
+        @removeRuleNode="removeRuleNode"
+        :depth="1"
+        :filterRuleConfig="filterRuleConfig" />
     </div>
   </div>
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 import RuleItem from './RuleItem.vue'
 
 const childRuleItem = ref()
@@ -25,8 +24,8 @@ const props = defineProps({
     type: Object,
     default: () => {
       return {}
-    }
-  }
+    },
+  },
 })
 
 const filterRuleConfig = ref(JSON.parse(JSON.stringify(props.filterRuleConfig)))
@@ -46,16 +45,16 @@ function insertRuleItem() {
           filedValue: '',
           id: String(Math.random()),
           unit: '0',
-          depth: 2
-        }
-      ]
+          depth: 2,
+        },
+      ],
     }
   } else {
     filterRuleConfig.value.children.push({
       filedValue: '',
       id: String(Math.random()),
       unit: '0',
-      depth: 2
+      depth: 2,
     })
   }
 }
@@ -74,8 +73,9 @@ function removeRuleNode(node) {
             source.filedValue = source.children[0].filedValue
             // 不处于第一层级的节点不能单个展示
             if (
-                source.depth !== 1 ||
-                (source.children[0].children && source.children[0].children.length)
+              source.depth !== 1 ||
+              (source.children[0].children &&
+                source.children[0].children.length)
             ) {
               source.children = source.children[0].children || undefined
             }
@@ -97,7 +97,7 @@ function getNodeRuleTreedata() {
 }
 
 defineExpose({
-  getNodeRuleTreedata
+  getNodeRuleTreedata,
 })
 </script>
 <style scoped lang="scss">

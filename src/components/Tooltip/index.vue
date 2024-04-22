@@ -6,8 +6,7 @@
     :offset="offset"
     :persistent="persistent"
     :popper-class="[className].join(' ')"
-    :placement="placement"
-  >
+    :placement="placement">
     <template #content>
       <slot name="content"></slot>
     </template>

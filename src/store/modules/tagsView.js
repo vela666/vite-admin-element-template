@@ -45,7 +45,7 @@ export default defineStore('tagsView', () => {
     state.visitedViews.push(
       Object.assign({}, view, {
         title: view.meta.title || 'no-name',
-      }),
+      })
     )
   }
   function ADD_CACHED_VIEW(view) {

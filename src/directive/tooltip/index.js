@@ -31,7 +31,7 @@ export default {
         // if (!e.path.some(item => /n-only-tooltip/.test(item.className))) {
         console.log(
           !e.relatedTarget?.matches('.n-only-tooltip') &&
-            !e.target.matches('.n-only-tooltip'),
+            !e.target.matches('.n-only-tooltip')
         )
         if (
           !e.relatedTarget?.matches('.n-only-tooltip') &&

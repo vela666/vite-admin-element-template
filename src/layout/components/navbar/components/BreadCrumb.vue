@@ -37,7 +37,7 @@ const getBreadcrumb = () => {
     matched = [{ path: '/', meta: { title: '主页' } }].concat(matched)
   }
   levelList.value = matched.filter(
-    (item) => item.meta && item.meta.title && item.meta.breadcrumb !== false,
+    (item) => item.meta && item.meta.title && item.meta.breadcrumb !== false
   )
 }
 
@@ -68,7 +68,7 @@ watch(
   },
   {
     immediate: true,
-  },
+  }
 )
 
 defineOptions({

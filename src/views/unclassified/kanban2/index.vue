@@ -67,7 +67,7 @@ const items = ref(
       mark: `grid-item-${item.id}`,
       // maxH: 8,
     }
-  }),
+  })
 )
 /*const items = ref(
   [

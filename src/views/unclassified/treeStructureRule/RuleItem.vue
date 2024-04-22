@@ -93,7 +93,7 @@ watch(
       calculateLineHeight()
     })
   },
-  { deep: true },
+  { deep: true }
 )
 
 /**
@@ -167,7 +167,7 @@ function calculateLineHeight() {
     const parentNode = verticalLine[i].parentNode
     const firstSelectLabelRow = parentNode.children[0].children[0]
     const hasWraper = Array.from(firstSelectLabelRow.children).find(
-      (o) => o.className === 'rulers-select-wraper',
+      (o) => o.className === 'rulers-select-wraper'
     )
     if (hasWraper) {
       verticalLine[i].style.top = hasWraper.clientHeight / 2 + 'px'

@@ -79,7 +79,7 @@ let rightData = ref([
 
 const testRight = computed(() => {
   return rightData.value.filter(
-    (right) => !layout.value.map((v) => +v.id).includes(+right.id),
+    (right) => !layout.value.map((v) => +v.id).includes(+right.id)
   )
 })
 
@@ -143,7 +143,7 @@ const dragMove = (node) => {
     })
     const newPos = item.calcXY(
       dragElPos.y - parentRect.top,
-      dragElPos.x - parentRect.left,
+      dragElPos.x - parentRect.left
     )
 
     if (mouseInGrid) {
@@ -153,7 +153,7 @@ const dragMove = (node) => {
         newPos.x,
         newPos.y,
         dragItem.h,
-        dragItem.w,
+        dragItem.w
       )
       dragItem.i = String(index)
       dragItem.x = layout.value[index].x
@@ -165,7 +165,7 @@ const dragMove = (node) => {
         newPos.x,
         newPos.y,
         dragItem.h,
-        dragItem.w,
+        dragItem.w
       )
       layout.value = layout.value.filter((item) => item.i !== dropId)
     }
@@ -189,7 +189,7 @@ const dragEnd = (node) => {
     dragItem.x,
     dragItem.y,
     dragItem.h,
-    dragItem.w,
+    dragItem.w
   )
   layout.value = layout.value.filter((item) => item.i !== dropId)
 
@@ -211,7 +211,7 @@ const dragEnd = (node) => {
     dragItem.x,
     dragItem.y,
     dragItem.h,
-    dragItem.w,
+    dragItem.w
   )
 
   const item = gridLayoutRef.value.getItem(dropId)
@@ -230,7 +230,7 @@ watch(
   debounce((val) => {
     console.log(val)
   }, 300),
-  { deep: true },
+  { deep: true }
 )
 
 defineExpose({

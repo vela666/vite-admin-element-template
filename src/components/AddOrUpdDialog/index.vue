@@ -99,7 +99,7 @@ watch(
     const docStyle = document.documentElement.style
     docStyle.setProperty('--dialog-maxH', val)
   },
-  { immediate: true },
+  { immediate: true }
 )
 // 解决嵌套某些内容渲染时很慢 导致对话框有卡顿问题
 const opened = () => {

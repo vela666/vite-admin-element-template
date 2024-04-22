@@ -8,7 +8,7 @@ import { viteMockServe } from 'vite-plugin-mock'
 import eslintPlugin from 'vite-plugin-eslint'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+// import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import {
   createStyleImportPlugin,
   VxeTableResolve,
@@ -17,7 +17,7 @@ import {
 function toPascalCase(str) {
   const words = str.split('-')
   const capitalizedWords = words.map(
-    (word) => word.charAt(0).toLowerCase() + word.slice(1),
+    (word) => word.charAt(0).toLowerCase() + word.slice(1)
   )
   return capitalizedWords.join('')
 }
@@ -46,12 +46,12 @@ export function composePlugins(command) {
     AutoImport({
       // 自动引入以下方法 Vue 相关函数，如：ref, reactive, toRef 等 不建议开启
       // imports: ['vue', 'vue-router', 'pinia'],
-      resolvers: [
+      /* resolvers: [
         ElementPlusResolver({
           // 自定义命名空间且按需导入必需，不然样式不会被引入
           importStyle: 'sass',
         }),
-      ],
+      ],*/
       // 该目录下的文件会被自动导入，但每次新加的变量或函数需重启项目
       // dirs: ['./src/utils'],
       // 解决eslint报错问题 然后把filepath的文件在 .eslintrc.js 的 extends 中引入
@@ -69,18 +69,18 @@ export function composePlugins(command) {
       //指定后，“dirs”和“extensions”选项将被忽略。
       //  * 只匹配一级子目录，而 ** 匹配任意深度的子目录。
       // globs: ['src/components/**/*.vue'],
-      globs: ['src/components/*/index.vue'],
+      // globs: ['src/components/*/index.vue'],
       // 组件的有效文件扩展名
       extensions: ['vue'],
       // 自定义指令配合下面的自定义解析器使用
       // directives: true,
-      resolvers: [
+      /* resolvers: [
         ElementPlusResolver({
           // 自定义命名空间且按需导入必需，不然样式不会被引入
           importStyle: 'sass',
         }),
         // 自定义解析器
-        /* {
+        /!* {
           type: 'directive',
           resolve: (name) => {
             console.log(toPascalCase(name))
@@ -90,8 +90,8 @@ export function composePlugins(command) {
               from: `@/directive/${toPascalCase(name)}/index.js`,
             }
           },
-        },*/
-      ],
+        },*!/
+      ],*/
     }),
     //  需安装 pnpm i  vite-plugin-style-import consola -D
     createStyleImportPlugin({

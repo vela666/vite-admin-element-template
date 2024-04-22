@@ -34,7 +34,7 @@ export const dateLabelEnum = getEnum({
   labelKey: 'type',
 })
 export const kanBanFilterDate = `kanBanFilterDate${sessionStorage.getItem(
-  'appId',
+  'appId'
 )}`
 
 export const todayAndYesterday = {
