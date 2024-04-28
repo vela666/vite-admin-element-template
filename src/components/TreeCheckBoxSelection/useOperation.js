@@ -42,7 +42,7 @@ export default function ({ props, emit, selected }) {
   // 默认选中及禁用的
   const defaultSelectedAndDisabledNode = computed(() => {
     return defaultSelectedNode.value.filter(
-      (item) => item[treeProps.value.disabled]
+      (item) => item[treeProps.value.disabled] && item.skip !== true
     )
   })
 

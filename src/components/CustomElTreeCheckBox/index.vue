@@ -101,9 +101,12 @@ const filter = async (val) => {
     )
     parents.forEach((parent) => {
       parent.display = parent.children.some((n) => n.display)
-      parent[treeProps.value.disabled] = parent.children
-        .filter((n) => n.display)
-        .every((n) => n[treeProps.value.disabled])
+      const bool = parent.children
+          .filter((n) => n.display)
+          .every((n) => n[treeProps.value.disabled])
+      parent[treeProps.value.disabled] = bool
+      // defaultSelectedAndDisabledNode使用 skip跳过判断
+      parent.skip = bool
     })
   })
 
